@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/visual_SLAM.dir/src/geometry.cpp.o CMakeFiles/visual_SLAM.dir/src/main.cpp.o CMakeFiles/visual_SLAM.dir/src/photometric.cpp.o  -o visual_SLAM 

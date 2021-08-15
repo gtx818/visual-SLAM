@@ -5,4 +5,10 @@
 #ifndef VISUAL_SLAM_GEOMETRY_HPP
 #define VISUAL_SLAM_GEOMETRY_HPP
 
+#include <opencv2/opencv.hpp>
+
+namespace gtx_slam{
+    
+}
+
 #endif //VISUAL_SLAM_GEOMETRY_HPP

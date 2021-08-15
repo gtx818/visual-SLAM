@@ -5,4 +5,8 @@
 #ifndef VISUAL_SLAM_PHOTOMETRIC_HPP
 #define VISUAL_SLAM_PHOTOMETRIC_HPP
 
+namespace gtx_slam{
+
+}
+
 #endif //VISUAL_SLAM_PHOTOMETRIC_HPP
