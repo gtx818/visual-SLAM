@@ -4,8 +4,6 @@
 #include "geometry.hpp"
 #include "photometric.hpp"
 
-#include <string>
-#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -25,6 +23,8 @@ int main(int argc, const char **argv) {
 
     cv::Mat img = cv::imread(data_path+"1.png",cv::IMREAD_UNCHANGED);
     assert(img.data);
+
+    gt
 
 
 }

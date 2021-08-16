@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/gtx/visual-SLAM/include 
+CXX_INCLUDES = -I/home/gtx/visual-SLAM/include -I/usr/include/opencv4 -I/usr/include/eigen3 
 
