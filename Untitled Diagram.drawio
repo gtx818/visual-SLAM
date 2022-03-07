@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-07T16:18:06.583Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="XxJHqYcpRe0YZaIHFr9E" version="16.6.6" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2022-03-07T16:19:57.470Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="A9TS3hGzUHHc2lfKp8fz" version="16.6.6" type="github" pages="11">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -660,24 +660,27 @@
           <mxGeometry y="702" width="560" height="26" as="geometry" />
         </mxCell>
         <mxCell id="4fdpuZO_QBha4YaecK2Q-29" value="Tracking()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="eyBE8eY4iIQxkAD-bZA1-1">
-          <mxGeometry x="710" y="10" width="560" height="160" as="geometry">
+          <mxGeometry x="710" y="10" width="560" height="200" as="geometry">
             <mxRectangle x="40" y="10" width="90" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="4fdpuZO_QBha4YaecK2Q-30" value="初始化mbOnlyTracking(F), mbVO(false),mbNewSegImgFlag(F),mpORBVocabulary, mpPointCloudMapping, mpKeyFrameDB, mpInitializer, mpSystem, mpMap, mnLastRelocFrameID(0)" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0F0F;" vertex="1" parent="4fdpuZO_QBha4YaecK2Q-29">
+        <mxCell id="4fdpuZO_QBha4YaecK2Q-30" value="初始化mbOnlyTracking(F), mbVO(false),mbNewSegImgFlag(F),mpORBVocabulary, mpPointCloudMapping, mpKeyFrameDB, mpInitializer, mpSystem, mpMap, mnLastRelocFrameID(0)" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="4fdpuZO_QBha4YaecK2Q-29">
           <mxGeometry y="26" width="560" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="4fdpuZO_QBha4YaecK2Q-31" value="mMinFrames=0,mMaxFrames=fps, mbRGB顺序获知" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0F0F;" vertex="1" parent="4fdpuZO_QBha4YaecK2Q-29">
-          <mxGeometry y="70" width="560" height="26" as="geometry" />
+        <mxCell id="k-eVFCMZ1kDdMW_gKI8o-0" value="初始化mState为NO_IMAGES_YET状态" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="4fdpuZO_QBha4YaecK2Q-29">
+          <mxGeometry y="70" width="560" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="4fdpuZO_QBha4YaecK2Q-32" value="初始化mpORBextractorLeft, 若双目相机mpORBextractorRight再初始化，单目则在初始化mpIniORBextractor" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0F0F;" vertex="1" parent="4fdpuZO_QBha4YaecK2Q-29">
-          <mxGeometry y="96" width="560" height="34" as="geometry" />
+        <mxCell id="4fdpuZO_QBha4YaecK2Q-31" value="mMinFrames=0,mMaxFrames=fps, mbRGB顺序获知" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="4fdpuZO_QBha4YaecK2Q-29">
+          <mxGeometry y="114" width="560" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="4fdpuZO_QBha4YaecK2Q-33" value="非单目相机初始化mThDepth，RGB-D相机mDepthMapFactor" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0F0F;" vertex="1" parent="4fdpuZO_QBha4YaecK2Q-29">
-          <mxGeometry y="130" width="560" height="26" as="geometry" />
+        <mxCell id="4fdpuZO_QBha4YaecK2Q-32" value="初始化mpORBextractorLeft, 若双目相机mpORBextractorRight再初始化，单目则在初始化mpIniORBextractor" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="4fdpuZO_QBha4YaecK2Q-29">
+          <mxGeometry y="140" width="560" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="4fdpuZO_QBha4YaecK2Q-33" value="非单目相机初始化mThDepth，RGB-D相机mDepthMapFactor" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="4fdpuZO_QBha4YaecK2Q-29">
+          <mxGeometry y="174" width="560" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ys92J9JCCPWLJnrlSH6S-0" value="setLocalMapper(), setLoopClosing(), SetViewer(), SetSegment()," style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="eyBE8eY4iIQxkAD-bZA1-1">
-          <mxGeometry x="710" y="200" width="560" height="40" as="geometry">
+          <mxGeometry x="710" y="250" width="560" height="40" as="geometry">
             <mxRectangle x="40" y="10" width="90" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
