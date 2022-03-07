@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-07T16:07:45.393Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="6iPqG4UNkcr3jmi6DUkx" version="16.6.6" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2022-03-07T16:10:40.918Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="9M9xvhvZESSkQBlh95Xi" version="16.6.6" type="github" pages="11">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -292,6 +292,12 @@
         </mxCell>
         <mxCell id="2ZdtT-QiJ84g9cSX42TI-0" value="若不存在，返回0" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="_Ofx9i8RjlCiZ11DT9mQ-0">
           <mxGeometry y="110" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XAbaBJ8Ay5LwpOYeovHl-1" value="Frame::ComputeStereoFromRGBD" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="1410" y="510" width="380" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="XAbaBJ8Ay5LwpOYeovHl-3" value="mvDepth的计算使用mvKeys，未经过去畸变的点，而mvuRight的计算使用的是mvKeysUn，经过去畸变的点" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="XAbaBJ8Ay5LwpOYeovHl-1">
+          <mxGeometry y="26" width="380" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -833,7 +839,7 @@
         <mxCell id="ASyV_rmVMgUqRF97C-41-7" value="N提取的特征点数量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
           <mxGeometry y="244" width="330" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="ASyV_rmVMgUqRF97C-41-8" value="mvKeys, mvKeysRight提取的特征点(尺寸缩放之后), mvKeysUn未去畸变" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
+        <mxCell id="ASyV_rmVMgUqRF97C-41-8" value="mvKeys, mvKeysRight提取的特征点(尺寸缩放之后), mvKeysUn去畸变后" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
           <mxGeometry y="270" width="330" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-9" value="&lt;font&gt;mvuRight, mvDepth双目相机中另一KeyPoint的对应值&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
