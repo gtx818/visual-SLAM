@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-07T12:57:31.622Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="EpYusEKYGNmR_mAOFcFw" version="16.6.6" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2022-03-07T13:07:31.546Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="Efe9NCI5EsyL8L1AgxaP" version="16.6.6" type="github" pages="11">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -240,7 +240,7 @@
         <mxCell id="OGtgcvj3k4_5JYCi7gIc-4" value="初始化当前帧mCurrentFrame" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OGtgcvj3k4_5JYCi7gIc-2">
           <mxGeometry y="70" width="310" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="ELVMnGxV3x5qD8JtwuFI-6" value="调用isNewSegmentImgArrived()函数查看语义分割是否执行结束" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OGtgcvj3k4_5JYCi7gIc-2">
+        <mxCell id="ELVMnGxV3x5qD8JtwuFI-6" value="调用isNewSegmentImgArrived()函数查看语义分割是否执行结束，若没有则等待" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OGtgcvj3k4_5JYCi7gIc-2">
           <mxGeometry y="96" width="310" height="34" as="geometry" />
         </mxCell>
         <mxCell id="ELVMnGxV3x5qD8JtwuFI-1" value="对当前帧调用CalculEverything()函数" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OGtgcvj3k4_5JYCi7gIc-2">
@@ -267,16 +267,13 @@
           <mxGeometry y="96" width="310" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ELVMnGxV3x5qD8JtwuFI-7" value="Tracking::isNewSegmentImgArrived()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1000" y="210" width="310" height="122" as="geometry" />
+          <mxGeometry x="1000" y="210" width="310" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="ELVMnGxV3x5qD8JtwuFI-8" value="锁住" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-7">
-          <mxGeometry y="26" width="310" height="44" as="geometry" />
+        <mxCell id="ELVMnGxV3x5qD8JtwuFI-8" value="锁住mMutexNewImgSegment" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-7">
+          <mxGeometry y="26" width="310" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="ELVMnGxV3x5qD8JtwuFI-9" value="初始化当前帧mCurrentFrame" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-7">
-          <mxGeometry y="70" width="310" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="ELVMnGxV3x5qD8JtwuFI-10" value="对当前帧调用CalculEverything()函数" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-7">
-          <mxGeometry y="96" width="310" height="26" as="geometry" />
+        <mxCell id="ELVMnGxV3x5qD8JtwuFI-9" value="检测mbNewSegImgFlag，若完成，则将其设为False，返回True，否则返回False" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-7">
+          <mxGeometry y="50" width="310" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -741,7 +738,7 @@
         <mxCell id="VkRYxnUSBmziObQUgCHe-2" value="label_colours, classifier" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-0">
           <mxGeometry y="52" width="380" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="VkRYxnUSBmziObQUgCHe-3" value="mImg, mImgTemp, mImgSegment_color, mImgSegment_color_final, mImgSegment, mImgSegmentLatest" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-0">
+        <mxCell id="VkRYxnUSBmziObQUgCHe-3" value="mImg, mImgTemp, mImgSegment_color, mImgSegment_color_final, mImgSegment存储语义分割结果, mImgSegmentLatest" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-0">
           <mxGeometry y="78" width="380" height="42" as="geometry" />
         </mxCell>
         <mxCell id="VkRYxnUSBmziObQUgCHe-4" value="mpTracker" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-0">
