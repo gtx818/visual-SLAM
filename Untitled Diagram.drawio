@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-07T11:09:23.307Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="5K1J_o-vH04_utks1Zny" version="16.6.6" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2022-03-07T11:10:20.778Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="-tjT6RD2nzci6P9i_yD0" version="16.6.6" type="github" pages="11">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -757,7 +757,7 @@
         <mxCell id="_ahl4LY8EQThOW4oc6h7-0" />
         <mxCell id="_ahl4LY8EQThOW4oc6h7-1" parent="_ahl4LY8EQThOW4oc6h7-0" />
         <mxCell id="ASyV_rmVMgUqRF97C-41-0" value="Frame类" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="_ahl4LY8EQThOW4oc6h7-1">
-          <mxGeometry x="40" y="10" width="330" height="480" as="geometry" />
+          <mxGeometry x="40" y="10" width="330" height="494" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-1" value="T_M用于存储不正常点" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
           <mxGeometry y="26" width="330" height="26" as="geometry" />
@@ -789,23 +789,26 @@
         <mxCell id="ASyV_rmVMgUqRF97C-41-10" value="&lt;font&gt;mBowVec, mFeatVec词袋结构&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
           <mxGeometry y="286" width="330" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="ASyV_rmVMgUqRF97C-41-11" value="&lt;font&gt;mvpMapPoints与特征点关联的地图点&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
+        <mxCell id="ASyV_rmVMgUqRF97C-41-59" value="mDescriptors, mDescriptorsRight描述符" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
           <mxGeometry y="312" width="330" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="ASyV_rmVMgUqRF97C-41-12" value="&lt;font&gt;mvbOutlier指示是否为外点&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
+        <mxCell id="ASyV_rmVMgUqRF97C-41-11" value="&lt;font&gt;mvpMapPoints与特征点关联的地图点&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
           <mxGeometry y="338" width="330" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="ASyV_rmVMgUqRF97C-41-13" value="&lt;font&gt;mTcw&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
+        <mxCell id="ASyV_rmVMgUqRF97C-41-12" value="&lt;font&gt;mvbOutlier指示是否为外点&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
           <mxGeometry y="364" width="330" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="ASyV_rmVMgUqRF97C-41-14" value="nNextId, mnId当前以及下一帧Id" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
+        <mxCell id="ASyV_rmVMgUqRF97C-41-13" value="&lt;font&gt;mTcw&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
           <mxGeometry y="390" width="330" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="ASyV_rmVMgUqRF97C-41-15" value="&lt;font&gt;mpReferenceKF参考关键帧&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
+        <mxCell id="ASyV_rmVMgUqRF97C-41-14" value="nNextId, mnId当前以及下一帧Id" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
           <mxGeometry y="416" width="330" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="ASyV_rmVMgUqRF97C-41-16" value="&lt;font&gt;mRcw, mtcw, mRwc, mOw&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
+        <mxCell id="ASyV_rmVMgUqRF97C-41-15" value="&lt;font&gt;mpReferenceKF参考关键帧&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
           <mxGeometry y="442" width="330" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ASyV_rmVMgUqRF97C-41-16" value="&lt;font&gt;mRcw, mtcw, mRwc, mOw&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
+          <mxGeometry y="468" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-19" value="Frame()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="_ahl4LY8EQThOW4oc6h7-1">
           <mxGeometry x="414" y="10" width="330" height="190" as="geometry" />
