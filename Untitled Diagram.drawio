@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-07T16:10:40.918Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="9M9xvhvZESSkQBlh95Xi" version="16.6.6" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2022-03-07T16:11:31.443Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="nDxYRTRxdbLJxkwojgte" version="16.6.6" type="github" pages="11">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -254,6 +254,9 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="_WeXFQgnrd8vcBTq9_94-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="ELVMnGxV3x5qD8JtwuFI-2" target="_Ofx9i8RjlCiZ11DT9mQ-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="ELVMnGxV3x5qD8JtwuFI-2" value="Frame::CalculEverything，输入彩色，灰度，深度图以及语义分割" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
           <mxGeometry x="1000" y="340" width="380" height="200" as="geometry" />
         </mxCell>
@@ -294,10 +297,19 @@
           <mxGeometry y="110" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="XAbaBJ8Ay5LwpOYeovHl-1" value="Frame::ComputeStereoFromRGBD" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1410" y="510" width="380" height="150" as="geometry" />
+          <mxGeometry x="1410" y="510" width="380" height="70" as="geometry" />
         </mxCell>
         <mxCell id="XAbaBJ8Ay5LwpOYeovHl-3" value="mvDepth的计算使用mvKeys，未经过去畸变的点，而mvuRight的计算使用的是mvKeysUn，经过去畸变的点" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="XAbaBJ8Ay5LwpOYeovHl-1">
           <mxGeometry y="26" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_WeXFQgnrd8vcBTq9_94-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="XAbaBJ8Ay5LwpOYeovHl-0" target="XAbaBJ8Ay5LwpOYeovHl-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_WeXFQgnrd8vcBTq9_94-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="ELVMnGxV3x5qD8JtwuFI-1" target="ELVMnGxV3x5qD8JtwuFI-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_WeXFQgnrd8vcBTq9_94-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="ELVMnGxV3x5qD8JtwuFI-6" target="ELVMnGxV3x5qD8JtwuFI-8">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
