@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-07T16:02:55.467Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="sLAI0ltBGLbCn18EMABV" version="16.6.6" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2022-03-07T16:07:45.393Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="6iPqG4UNkcr3jmi6DUkx" version="16.6.6" type="github" pages="11">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -255,7 +255,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="ELVMnGxV3x5qD8JtwuFI-2" value="Frame::CalculEverything，输入彩色，灰度，深度图以及语义分割" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1000" y="340" width="380" height="122" as="geometry" />
+          <mxGeometry x="1000" y="340" width="380" height="200" as="geometry" />
         </mxCell>
         <mxCell id="ELVMnGxV3x5qD8JtwuFI-4" value="根据语义分割结果中是否含有人以及T_M中是否有值判断动态点，调用mpORBextractorLeft-&amp;gt;CheckMovingKeyPoints()" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-2">
           <mxGeometry y="26" width="380" height="44" as="geometry" />
@@ -263,8 +263,14 @@
         <mxCell id="ELVMnGxV3x5qD8JtwuFI-5" value="对当前帧调用CalculEverything()函数，返回结果存储至flag_mov中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-2">
           <mxGeometry y="70" width="380" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="KNN6Kd6zlQ1QwXt9m6CE-0" value="mvKeysTemp中的特征点经过缩放之后存放至mvKeys中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-2">
-          <mxGeometry y="96" width="380" height="26" as="geometry" />
+        <mxCell id="KNN6Kd6zlQ1QwXt9m6CE-0" value="mvKeysTemp中的特征点经过缩放之后存放至mvKeys中，初始化特征点数量N" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-2">
+          <mxGeometry y="96" width="380" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="KNN6Kd6zlQ1QwXt9m6CE-1" value="mvKeys去畸变后存放至mvKeysUn" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-2">
+          <mxGeometry y="130" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="XAbaBJ8Ay5LwpOYeovHl-0" value="根据深度图计算得到双目右视图的特征点水平坐标以及深度值，存放在mvuRight以及mvDepth中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-2">
+          <mxGeometry y="156" width="380" height="44" as="geometry" />
         </mxCell>
         <mxCell id="ELVMnGxV3x5qD8JtwuFI-7" value="Tracking::isNewSegmentImgArrived()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
           <mxGeometry x="1000" y="210" width="310" height="100" as="geometry" />
