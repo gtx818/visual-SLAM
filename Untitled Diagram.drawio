@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-07T11:10:20.778Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="-tjT6RD2nzci6P9i_yD0" version="16.6.6" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2022-03-07T12:17:57.183Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="_pbJtK8axSzvWm3UHeFs" version="16.6.6" type="github" pages="11">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -757,58 +757,58 @@
         <mxCell id="_ahl4LY8EQThOW4oc6h7-0" />
         <mxCell id="_ahl4LY8EQThOW4oc6h7-1" parent="_ahl4LY8EQThOW4oc6h7-0" />
         <mxCell id="ASyV_rmVMgUqRF97C-41-0" value="Frame类" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="_ahl4LY8EQThOW4oc6h7-1">
-          <mxGeometry x="40" y="10" width="330" height="494" as="geometry" />
+          <mxGeometry x="40" y="10" width="330" height="524" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-1" value="T_M用于存储不正常点" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
           <mxGeometry y="26" width="330" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="ASyV_rmVMgUqRF97C-41-2" value="limit_dis_epi=1,limit_of_check=2120, limit_edge_corner=5, flag_mov, mvKeysTemp" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="52" width="330" height="38" as="geometry" />
+        <mxCell id="ASyV_rmVMgUqRF97C-41-2" value="limit_dis_epi=1,limit_of_check=2120用于检验两个匹配点的邻域光度误差，若大于该值则不用该匹配, limit_edge_corner=5与图像边缘的安全距离, flag_mov, mvKeysTemp" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
+          <mxGeometry y="52" width="330" height="68" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-3" value="mpORBvocabulary当前帧词袋？" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="90" width="330" height="26" as="geometry" />
+          <mxGeometry y="120" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-4" value="mpORBextractorLeft, mpORBextractorRight" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="116" width="330" height="26" as="geometry" />
+          <mxGeometry y="146" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-5" value="mTimeStamp时间戳" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="142" width="330" height="26" as="geometry" />
+          <mxGeometry y="172" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-6" value="mThDepth" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="168" width="330" height="26" as="geometry" />
+          <mxGeometry y="198" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-7" value="N提取的特征点数量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="194" width="330" height="26" as="geometry" />
+          <mxGeometry y="224" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-8" value="mvKeys, mvKeysRight提取的特征点（去畸变后）, mvKeysUn未去畸变" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="220" width="330" height="40" as="geometry" />
+          <mxGeometry y="250" width="330" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-9" value="&lt;font&gt;mvuRight, mvDepth双目相机中另一KeyPoint的对应值&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="260" width="330" height="26" as="geometry" />
+          <mxGeometry y="290" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-10" value="&lt;font&gt;mBowVec, mFeatVec词袋结构&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="286" width="330" height="26" as="geometry" />
+          <mxGeometry y="316" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-59" value="mDescriptors, mDescriptorsRight描述符" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="312" width="330" height="26" as="geometry" />
+          <mxGeometry y="342" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-11" value="&lt;font&gt;mvpMapPoints与特征点关联的地图点&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="338" width="330" height="26" as="geometry" />
+          <mxGeometry y="368" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-12" value="&lt;font&gt;mvbOutlier指示是否为外点&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="364" width="330" height="26" as="geometry" />
+          <mxGeometry y="394" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-13" value="&lt;font&gt;mTcw&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="390" width="330" height="26" as="geometry" />
+          <mxGeometry y="420" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-14" value="nNextId, mnId当前以及下一帧Id" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="416" width="330" height="26" as="geometry" />
+          <mxGeometry y="446" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-15" value="&lt;font&gt;mpReferenceKF参考关键帧&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="442" width="330" height="26" as="geometry" />
+          <mxGeometry y="472" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-16" value="&lt;font&gt;mRcw, mtcw, mRwc, mOw&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-0">
-          <mxGeometry y="468" width="330" height="26" as="geometry" />
+          <mxGeometry y="498" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-19" value="Frame()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="_ahl4LY8EQThOW4oc6h7-1">
           <mxGeometry x="414" y="10" width="330" height="190" as="geometry" />
@@ -834,7 +834,7 @@
         <mxCell id="ASyV_rmVMgUqRF97C-41-39" value="prepoint, nextpoint, F_prepoint, F_nextpoint, F2_prepoint, F2_nextpoint" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-36">
           <mxGeometry y="52" width="330" height="38" as="geometry" />
         </mxCell>
-        <mxCell id="ASyV_rmVMgUqRF97C-41-40" value="state, err, mvKeysPre" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-36">
+        <mxCell id="ASyV_rmVMgUqRF97C-41-40" value="state记录是否有匹配点, err记录匹配的误差值, mvKeysPre" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-36">
           <mxGeometry y="90" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-53" value="Frame(frame)拷贝初始化" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="_ahl4LY8EQThOW4oc6h7-1">
@@ -845,6 +845,21 @@
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-58" value="设置相机位姿SetPose(frame.mTcw)" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=default;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-53">
           <mxGeometry y="110" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ASyV_rmVMgUqRF97C-41-60" value="ProcessMovingObject()移动一致性检验" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="_ahl4LY8EQThOW4oc6h7-1">
+          <mxGeometry x="800" y="10" width="330" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ASyV_rmVMgUqRF97C-41-61" value="清空F_prepoint, F_nextpoint, F2_prepoint, F2_nextpoint, T_M" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=default;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-60">
+          <mxGeometry y="26" width="330" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ASyV_rmVMgUqRF97C-41-62" value="计算前一帧与当前帧的匹配点" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=default;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-60">
+          <mxGeometry y="70" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ASyV_rmVMgUqRF97C-41-63" value="滤除不可靠的匹配点对" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=default;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-60">
+          <mxGeometry y="100" width="330" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ASyV_rmVMgUqRF97C-41-64" value="根据匹配点对计算基础矩阵，从而计算出判据距离，若距离&amp;lt;=0.1则匹配点对存储值F_prepoint, F2_prepoint以及F_nextpoint, F2_nextpoint中，若距离&amp;gt;limit_dis_ep1则存储至T_M中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=default;" vertex="1" parent="ASyV_rmVMgUqRF97C-41-60">
+          <mxGeometry y="126" width="330" height="56" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
