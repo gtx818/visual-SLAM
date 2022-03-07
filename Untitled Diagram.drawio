@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-07T08:45:02.340Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="qRuhVTGPE76QLKNd1qXQ" version="16.6.6" type="github" pages="10">
+<mxfile host="app.diagrams.net" modified="2022-03-07T10:22:18.036Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="_tsAUqACJvyyVcJAv4ug" version="16.6.6" type="github" pages="10">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -168,7 +168,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="NEFC5_riWzsDIuWnUayE" name="Main">
-    <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="782" dy="1677" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="XBM9AIjGbo9Ioxt-2AgH-0" />
         <mxCell id="XBM9AIjGbo9Ioxt-2AgH-1" parent="XBM9AIjGbo9Ioxt-2AgH-0" />
@@ -187,14 +187,43 @@
         <mxCell id="cbzC4tqrLc4gMZMBszN0-0" value="System::TrackRGBD()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
           <mxGeometry x="260" y="10" width="310" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="cbzC4tqrLc4gMZMBszN0-1" value="初始化System变量为SLAM" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="cbzC4tqrLc4gMZMBszN0-0">
+        <mxCell id="cbzC4tqrLc4gMZMBszN0-1" value="检测模式是否变化" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="cbzC4tqrLc4gMZMBszN0-0">
           <mxGeometry y="26" width="310" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="cbzC4tqrLc4gMZMBszN0-2" value="开始跟踪TrackRGBD" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="cbzC4tqrLc4gMZMBszN0-0">
+        <mxCell id="cbzC4tqrLc4gMZMBszN0-2" value="检测是否Reset" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="cbzC4tqrLc4gMZMBszN0-0">
           <mxGeometry y="52" width="310" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="cbzC4tqrLc4gMZMBszN0-3" value="。。。" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="cbzC4tqrLc4gMZMBszN0-0">
+        <mxCell id="cbzC4tqrLc4gMZMBszN0-3" value="mpTracker-&amp;gt;GetImg()" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="cbzC4tqrLc4gMZMBszN0-0">
           <mxGeometry y="78" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="wZVVgEbONP2YVBvIuFuA-4" value="若mbActivateLocalizationMode变为True，mpLocalMapper-&amp;gt;RequestStop()，停止之后，mpTracker-&amp;gt;InformOnlyTracking(True)" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#000000;" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="630" y="-11" width="270" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wZVVgEbONP2YVBvIuFuA-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="cbzC4tqrLc4gMZMBszN0-1" target="wZVVgEbONP2YVBvIuFuA-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wZVVgEbONP2YVBvIuFuA-7" value="若mbDeactivateLocalizationMode变为True，mpTracker-&amp;gt;InformOnlyTracking(False)，通知之后，mpLocalMapper-&amp;gt;Release()" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#000000;" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="630" y="39" width="270" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wZVVgEbONP2YVBvIuFuA-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontColor=#000000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="cbzC4tqrLc4gMZMBszN0-1" target="wZVVgEbONP2YVBvIuFuA-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="76" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wZVVgEbONP2YVBvIuFuA-9" value="若mbReset为True则mpTracker-&amp;gt;Reset()" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#000000;" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="630" y="100" width="270" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wZVVgEbONP2YVBvIuFuA-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="cbzC4tqrLc4gMZMBszN0-2" target="wZVVgEbONP2YVBvIuFuA-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wZVVgEbONP2YVBvIuFuA-11" value="Tracking::GetImg()，通知语义分割线程开始运行" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="600" y="170" width="310" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="wZVVgEbONP2YVBvIuFuA-12" value="mpSegment-&amp;gt;mbNewImgFlag=True" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="wZVVgEbONP2YVBvIuFuA-11">
+          <mxGeometry y="26" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="wZVVgEbONP2YVBvIuFuA-13" value="将当前图像拷贝至mpSegment-&amp;gt;mImg中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="wZVVgEbONP2YVBvIuFuA-11">
+          <mxGeometry y="52" width="310" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -689,16 +718,16 @@
         <mxCell id="VkRYxnUSBmziObQUgCHe-12" value="Segment()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="J8xnCKbrqvF0mm7P0YjI-1">
           <mxGeometry x="510" y="10" width="380" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="VkRYxnUSBmziObQUgCHe-13" value="mbFinishRequested(F), mSkipIndex(1), mSegmentTime(0), imgIndex(0)" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-12">
+        <mxCell id="VkRYxnUSBmziObQUgCHe-13" value="mbFinishRequested(F), mSkipIndex(1), mSegmentTime(0), imgIndex(0)" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-12">
           <mxGeometry y="26" width="380" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="VkRYxnUSBmziObQUgCHe-14" value="model_file获得模型，trained_file获得caffemodel, LUT_file获得pascal格式的图片" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-12">
+        <mxCell id="VkRYxnUSBmziObQUgCHe-14" value="model_file获得模型，trained_file获得caffemodel, LUT_file获得pascal格式的图片" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-12">
           <mxGeometry y="70" width="380" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="VkRYxnUSBmziObQUgCHe-15" value="label_colours根据LUT_file获得图片的标签颜色，转换为BGR格式" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-12">
+        <mxCell id="VkRYxnUSBmziObQUgCHe-15" value="label_colours根据LUT_file获得图片的标签颜色，转换为BGR格式" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-12">
           <mxGeometry y="110" width="380" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="VkRYxnUSBmziObQUgCHe-16" value="mImgSegmentLatest初始化, mbNewImgFlag为False" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-12">
+        <mxCell id="VkRYxnUSBmziObQUgCHe-16" value="mImgSegmentLatest初始化, mbNewImgFlag为False" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-12">
           <mxGeometry y="140" width="380" height="26" as="geometry" />
         </mxCell>
         <mxCell id="VkRYxnUSBmziObQUgCHe-24" value="SetTracker()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="J8xnCKbrqvF0mm7P0YjI-1">
