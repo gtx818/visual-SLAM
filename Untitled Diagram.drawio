@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-07T12:21:24.720Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="-tUnJ_Mx5Zi6RdwzmVnp" version="16.6.6" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2022-03-07T12:57:31.622Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="EpYusEKYGNmR_mAOFcFw" version="16.6.6" type="github" pages="11">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -232,13 +232,19 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="OGtgcvj3k4_5JYCi7gIc-2" value="Tracking::GrabImageRGBD()，输入彩色以及深度图" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="630" y="210" width="310" height="110" as="geometry" />
+          <mxGeometry x="630" y="210" width="310" height="156" as="geometry" />
         </mxCell>
         <mxCell id="OGtgcvj3k4_5JYCi7gIc-3" value="彩色图转换为灰度图，深度图进行scaled缩放，分别存储值mImGray, mImDepth, mImRGB中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OGtgcvj3k4_5JYCi7gIc-2">
           <mxGeometry y="26" width="310" height="44" as="geometry" />
         </mxCell>
         <mxCell id="OGtgcvj3k4_5JYCi7gIc-4" value="初始化当前帧mCurrentFrame" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OGtgcvj3k4_5JYCi7gIc-2">
           <mxGeometry y="70" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ELVMnGxV3x5qD8JtwuFI-6" value="调用isNewSegmentImgArrived()函数查看语义分割是否执行结束" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OGtgcvj3k4_5JYCi7gIc-2">
+          <mxGeometry y="96" width="310" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="ELVMnGxV3x5qD8JtwuFI-1" value="对当前帧调用CalculEverything()函数" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OGtgcvj3k4_5JYCi7gIc-2">
+          <mxGeometry y="130" width="310" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ELVMnGxV3x5qD8JtwuFI-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="OGtgcvj3k4_5JYCi7gIc-1" target="OGtgcvj3k4_5JYCi7gIc-3">
           <mxGeometry relative="1" as="geometry">
@@ -247,6 +253,30 @@
               <mxPoint x="590" y="258" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="ELVMnGxV3x5qD8JtwuFI-2" value="Frame::CalculEverything，输入彩色以及深度图" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="1000" y="340" width="310" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="ELVMnGxV3x5qD8JtwuFI-3" value="彩色图转换为灰度图，深度图进行scaled缩放，分别存储值mImGray, mImDepth, mImRGB中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-2">
+          <mxGeometry y="26" width="310" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ELVMnGxV3x5qD8JtwuFI-4" value="初始化当前帧mCurrentFrame" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-2">
+          <mxGeometry y="70" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ELVMnGxV3x5qD8JtwuFI-5" value="对当前帧调用CalculEverything()函数" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-2">
+          <mxGeometry y="96" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ELVMnGxV3x5qD8JtwuFI-7" value="Tracking::isNewSegmentImgArrived()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="1000" y="210" width="310" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="ELVMnGxV3x5qD8JtwuFI-8" value="锁住" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-7">
+          <mxGeometry y="26" width="310" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="ELVMnGxV3x5qD8JtwuFI-9" value="初始化当前帧mCurrentFrame" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-7">
+          <mxGeometry y="70" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ELVMnGxV3x5qD8JtwuFI-10" value="对当前帧调用CalculEverything()函数" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ELVMnGxV3x5qD8JtwuFI-7">
+          <mxGeometry y="96" width="310" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -703,7 +733,7 @@
         <mxCell id="J8xnCKbrqvF0mm7P0YjI-0" />
         <mxCell id="J8xnCKbrqvF0mm7P0YjI-1" parent="J8xnCKbrqvF0mm7P0YjI-0" />
         <mxCell id="VkRYxnUSBmziObQUgCHe-0" value="Segment类" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="J8xnCKbrqvF0mm7P0YjI-1">
-          <mxGeometry x="40" y="10" width="380" height="340" as="geometry" />
+          <mxGeometry x="40" y="10" width="380" height="354" as="geometry" />
         </mxCell>
         <mxCell id="VkRYxnUSBmziObQUgCHe-1" value="conbase=64, jinzhi=4, labeldata[20]={...}" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-0">
           <mxGeometry y="26" width="380" height="26" as="geometry" />
@@ -726,17 +756,17 @@
         <mxCell id="VkRYxnUSBmziObQUgCHe-7" value="&lt;font&gt;mbFinishRequested&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-0">
           <mxGeometry y="198" width="380" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="VkRYxnUSBmziObQUgCHe-8" value="&lt;font&gt;mMutexNewImgSegment&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-0">
-          <mxGeometry y="224" width="380" height="26" as="geometry" />
+        <mxCell id="VkRYxnUSBmziObQUgCHe-8" value="&lt;font&gt;mMutexNewImgSegment用于查看mbNewSegImgFlag，即是否对当前图像帧完成语义分割&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-0">
+          <mxGeometry y="224" width="380" height="36" as="geometry" />
         </mxCell>
         <mxCell id="VkRYxnUSBmziObQUgCHe-9" value="&lt;font&gt;条件变量mbcvNewImgSegment&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-0">
-          <mxGeometry y="250" width="380" height="26" as="geometry" />
+          <mxGeometry y="260" width="380" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="VkRYxnUSBmziObQUgCHe-10" value="&lt;font&gt;mbNewImgFlag, mSkipIndex, imgIndex&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-0">
-          <mxGeometry y="276" width="380" height="24" as="geometry" />
+        <mxCell id="VkRYxnUSBmziObQUgCHe-10" value="&lt;font&gt;mbNewSegImgFlag指示是否完成当前帧的语义分割, mSkipIndex, imgIndex&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-0">
+          <mxGeometry y="286" width="380" height="34" as="geometry" />
         </mxCell>
         <mxCell id="VkRYxnUSBmziObQUgCHe-11" value="&lt;font&gt;model_file, trained_file, LUT_file&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="VkRYxnUSBmziObQUgCHe-0">
-          <mxGeometry y="300" width="380" height="34" as="geometry" />
+          <mxGeometry y="320" width="380" height="34" as="geometry" />
         </mxCell>
         <mxCell id="VkRYxnUSBmziObQUgCHe-12" value="Segment()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="J8xnCKbrqvF0mm7P0YjI-1">
           <mxGeometry x="510" y="10" width="380" height="170" as="geometry" />
