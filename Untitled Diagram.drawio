@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-07T08:37:51.606Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="2WxEe1T5HP2-Fu7pc2lP" version="16.6.6" type="github" pages="10">
+<mxfile host="app.diagrams.net" modified="2022-03-07T08:45:02.340Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="qRuhVTGPE76QLKNd1qXQ" version="16.6.6" type="github" pages="10">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -173,16 +173,28 @@
         <mxCell id="XBM9AIjGbo9Ioxt-2AgH-0" />
         <mxCell id="XBM9AIjGbo9Ioxt-2AgH-1" parent="XBM9AIjGbo9Ioxt-2AgH-0" />
         <mxCell id="5ZwU4GFAY4dAWswxQQot-0" value="Main" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="40" y="10" width="160" height="110" as="geometry" />
+          <mxGeometry x="40" y="10" width="170" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="5ZwU4GFAY4dAWswxQQot-1" value="初始化System" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="5ZwU4GFAY4dAWswxQQot-0">
-          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        <mxCell id="5ZwU4GFAY4dAWswxQQot-1" value="初始化System变量为SLAM" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="5ZwU4GFAY4dAWswxQQot-0">
+          <mxGeometry y="26" width="170" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="5ZwU4GFAY4dAWswxQQot-2" value="Row 2" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="5ZwU4GFAY4dAWswxQQot-0">
-          <mxGeometry y="52" width="160" height="26" as="geometry" />
+        <mxCell id="5ZwU4GFAY4dAWswxQQot-2" value="开始跟踪每一帧图像均执行TrackRGBD" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="5ZwU4GFAY4dAWswxQQot-0">
+          <mxGeometry y="52" width="170" height="38" as="geometry" />
         </mxCell>
-        <mxCell id="5ZwU4GFAY4dAWswxQQot-3" value="Row 3" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="5ZwU4GFAY4dAWswxQQot-0">
-          <mxGeometry y="78" width="160" height="26" as="geometry" />
+        <mxCell id="5ZwU4GFAY4dAWswxQQot-3" value="。。。" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="5ZwU4GFAY4dAWswxQQot-0">
+          <mxGeometry y="90" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cbzC4tqrLc4gMZMBszN0-0" value="System::TrackRGBD()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="260" y="10" width="310" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="cbzC4tqrLc4gMZMBszN0-1" value="初始化System变量为SLAM" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="cbzC4tqrLc4gMZMBszN0-0">
+          <mxGeometry y="26" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cbzC4tqrLc4gMZMBszN0-2" value="开始跟踪TrackRGBD" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="cbzC4tqrLc4gMZMBszN0-0">
+          <mxGeometry y="52" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cbzC4tqrLc4gMZMBszN0-3" value="。。。" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="cbzC4tqrLc4gMZMBszN0-0">
+          <mxGeometry y="78" width="310" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -226,31 +238,34 @@
           <mxGeometry y="260" width="220" height="26" as="geometry" />
         </mxCell>
         <mxCell id="snyWjYY8nI6VhSQiQAVx-7" value="System()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="jMa5dYvX6v_q3Ia01rmw-1">
-          <mxGeometry x="360" y="10" width="270" height="286" as="geometry" />
+          <mxGeometry x="360" y="10" width="270" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="iMxnfdd-Q5UNsJNEeDG7-0" value="mbReset(F), mbActivateLocalizationMode(F), mbDeactivateLocalizationMode(F)" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="snyWjYY8nI6VhSQiQAVx-7">
+          <mxGeometry y="26" width="270" height="44" as="geometry" />
         </mxCell>
         <mxCell id="snyWjYY8nI6VhSQiQAVx-8" value="读取词袋库到mpVocabulary中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="snyWjYY8nI6VhSQiQAVx-7">
-          <mxGeometry y="26" width="270" height="26" as="geometry" />
+          <mxGeometry y="70" width="270" height="26" as="geometry" />
         </mxCell>
         <mxCell id="snyWjYY8nI6VhSQiQAVx-9" value="创建KeyFrameDatabase" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="snyWjYY8nI6VhSQiQAVx-7">
-          <mxGeometry y="52" width="270" height="26" as="geometry" />
+          <mxGeometry y="96" width="270" height="26" as="geometry" />
         </mxCell>
         <mxCell id="snyWjYY8nI6VhSQiQAVx-10" value="创建地图mpMap（可从已有地图中创建）" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="snyWjYY8nI6VhSQiQAVx-7">
-          <mxGeometry y="78" width="270" height="26" as="geometry" />
+          <mxGeometry y="122" width="270" height="26" as="geometry" />
         </mxCell>
         <mxCell id="snyWjYY8nI6VhSQiQAVx-11" value="创建点云mpPointCloudMapping" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="snyWjYY8nI6VhSQiQAVx-7">
-          <mxGeometry y="104" width="270" height="26" as="geometry" />
+          <mxGeometry y="148" width="270" height="26" as="geometry" />
         </mxCell>
         <mxCell id="snyWjYY8nI6VhSQiQAVx-12" value="初始化跟踪器mpTracker（主线程）" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="snyWjYY8nI6VhSQiQAVx-7">
-          <mxGeometry y="130" width="270" height="26" as="geometry" />
+          <mxGeometry y="174" width="270" height="26" as="geometry" />
         </mxCell>
         <mxCell id="snyWjYY8nI6VhSQiQAVx-13" value="初始化局部地图器mpLocalMapper(线程1)" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="snyWjYY8nI6VhSQiQAVx-7">
-          <mxGeometry y="156" width="270" height="26" as="geometry" />
+          <mxGeometry y="200" width="270" height="26" as="geometry" />
         </mxCell>
         <mxCell id="snyWjYY8nI6VhSQiQAVx-14" value="初始化回环检测器mpLoopCloser（线程2）" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="snyWjYY8nI6VhSQiQAVx-7">
-          <mxGeometry y="182" width="270" height="26" as="geometry" />
+          <mxGeometry y="226" width="270" height="26" as="geometry" />
         </mxCell>
         <mxCell id="snyWjYY8nI6VhSQiQAVx-18" value="初始化语义分割器mpSegment（线程3）" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="snyWjYY8nI6VhSQiQAVx-7">
-          <mxGeometry y="208" width="270" height="26" as="geometry" />
+          <mxGeometry y="252" width="270" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
