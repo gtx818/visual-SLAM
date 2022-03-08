@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T08:17:36.009Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="ruNFngWJyiIjyyMIDO1r" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T08:17:49.782Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="1w23kTec_H_a5oh0oRRU" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -588,6 +588,9 @@
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-0" value="丢弃Outliers，遍历所有特征点，如果有对应的地图点则执行以下操作：&lt;br&gt;1) 若该地图点的mvbOutlier为T，以NULL清空对应的mvpMapPoints，mvbOutlier置为F，该地图点的mnLastFrameSeen属性置为当前帧的Id&lt;br&gt;2) 若mvbOutlier为F，检查该点的nObs数是否大于0，若大于0则nmatchesMap+1&lt;br&gt;3) 若nmatchesMap&amp;gt;=10返回T，否则F" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLAkf531DFTIB7mjHat2-8">
           <mxGeometry y="190" width="380" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="JUHuugl6f-nXhk04OkP1-2" target="pLAkf531DFTIB7mjHat2-9">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
