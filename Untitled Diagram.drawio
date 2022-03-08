@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T13:25:31.145Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="14li8YtSemvrgET_QrQI" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T14:07:50.240Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="EF3SOdjpjzPvL1Se7YIC" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -356,7 +356,7 @@
         <mxCell id="qA90g9YNz_ztb8RQSS6E-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="_WeXFQgnrd8vcBTq9_94-13" source="_WeXFQgnrd8vcBTq9_94-16" target="_WeXFQgnrd8vcBTq9_94-17">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="_WeXFQgnrd8vcBTq9_94-16" value="当前状态不为NOT_INITIALIZED时，意味着初始化完成，此时做如下操作：&lt;br&gt;1. 检查mbOnlyTracking是否为T，若为T，调用_Track_loc_only()，否则调用_Track_full()函数，返回的结果为跟踪状态;&lt;br&gt;2. 更新当前帧的mpReferenceKF为Tracking::mpReferenceKF;&lt;br&gt;3. 再次检查mbOnlyTracking是否为T，若为T，判断1中返回的跟踪状态是否为T，调用TrackLocalMap()，若为F则将mState置为LOST；若mbOnlyTracking为F，则需要1中返回的跟踪状态为T且mbVO为F才可以执行TrakcLocalMap()函数，否则将mState置为LOST;&lt;br&gt;4. 根据TrackLocalMap()的状态，若为T则mState状态为OK，否则为LOST" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
+        <mxCell id="_WeXFQgnrd8vcBTq9_94-16" value="当前状态不为NOT_INITIALIZED时，意味着初始化完成，此时做如下操作：&lt;br&gt;1. 检查mbOnlyTracking是否为T，若为T，调用_Track_loc_only()，否则调用_Track_full()函数，返回的结果为跟踪状态;&lt;br&gt;2. 更新当前帧的mpReferenceKF为Tracking::mpReferenceKF;&lt;br&gt;3. 再次检查mbOnlyTracking是否为T，若为T，判断1中返回的跟踪状态是否为T，调用TrackLocalMap()，若为F则将mState置为LOST；若mbOnlyTracking为F，则需要1中返回的跟踪状态为T且mbVO为F才可以执行TrakcLocalMap()函数，否则将mState置为LOST;&lt;br&gt;4. 根据TrackLocalMap()的状态，若为T则mState状态为OK，否则为LOST；&lt;br&gt;5. 如果跟踪状态为T，则再次进行操作：&lt;br&gt;&amp;nbsp; &amp;nbsp;1). 计算运动模型mVelocity，利用当前帧的Tcw与前一帧mLastFrame的Twc;&lt;br&gt;&amp;nbsp; &amp;nbsp;2). 对当前帧的mvpMapPoints再次进行检测，若其nObs属性&amp;lt;1则将mvbOutlier属性置为F，并置对应的mvpMapPoints为NULL;&lt;br&gt;&amp;nbsp; &amp;nbsp;3). 清空mlpTemporalPoints（这是之前补充的点数），注意这里使用的是指针，因此当前帧对应的mvpMapPoints也会被清空;&lt;br&gt;&amp;nbsp; &amp;nbsp;4). 调用NeedNewKeyFrame函数判断是否需要插入关键帧，若需要，调用CreateNewKeyFrame插入新关键帧。" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
           <mxGeometry y="130" width="380" height="340" as="geometry" />
         </mxCell>
         <mxCell id="_WeXFQgnrd8vcBTq9_94-17" value="若mCurrentFrame的mTcw不为空，则记录其与参考关键帧的相对位姿至mlRelativeFramePoses，记录参考关键帧mpReferenceKF至mlpReferences,记录当前帧的时间戳至mlFrameTimes中，记录当前状态是否为LOST至mlbLost中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
@@ -792,6 +792,32 @@
         </mxCell>
         <mxCell id="vV8HTxjCi_RAj6mCy8sG-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#FF0000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="PlLTtLYmkT2AqZDPCaeT-16" target="qv-oUV_MYS-JjPGcxS9e-3">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="PlLTtLYmkT2AqZDPCaeT-4" target="PlLTtLYmkT2AqZDPCaeT-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="_WeXFQgnrd8vcBTq9_94-16" target="PlLTtLYmkT2AqZDPCaeT-15">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1440" y="950" />
+              <mxPoint x="1440" y="2336" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-6" value="Tracking::NeedNewKeyFrame()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="1600" y="2620" width="380" height="322" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-7" value="若mbOnlyTracking为T，返回F；&lt;br&gt;若mpLocalMapper中的mbStopped或mbStopRequested为T，表明现在LoopClosure阻塞了该线程，因此返回F" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-6">
+          <mxGeometry y="26" width="380" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-8" value="查看mpMap中的关键帧数量，如果太多返回F，还有就是当前帧距离之前mnLastRelocFrameId过去不久返回F" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-6">
+          <mxGeometry y="80" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-9" value="记录参考关键帧mpReferenceKF中地图点的观测数大于3或2(当nKFs&amp;lt;=2时)的个数，调用KeyFrame::TrackedMapPoints函数" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-6">
+          <mxGeometry y="120" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-10" value="检测LocalMapper是否允许加入新关键帧，调用LocalMapping::AcceptKeyFrames函数" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-6">
+          <mxGeometry y="160" width="380" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
