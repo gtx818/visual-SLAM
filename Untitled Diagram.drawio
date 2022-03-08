@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T14:43:53.554Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="Dr2mEz_mF8O0LdiZiZft" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T14:46:42.844Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="dweu9FXhmoKL60abp8Mf" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -805,7 +805,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="vV8HTxjCi_RAj6mCy8sG-6" value="Tracking::NeedNewKeyFrame()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1600" y="2620" width="380" height="410" as="geometry" />
+          <mxGeometry x="1600" y="2620" width="380" height="350" as="geometry" />
         </mxCell>
         <mxCell id="vV8HTxjCi_RAj6mCy8sG-7" value="若mbOnlyTracking为T，返回F；&lt;br&gt;若mpLocalMapper中的mbStopped或mbStopRequested为T，表明现在LoopClosure阻塞了该线程，因此返回F" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-6">
           <mxGeometry y="26" width="380" height="54" as="geometry" />
@@ -896,6 +896,22 @@
             <Array as="points">
               <mxPoint x="3510" y="3245" />
               <mxPoint x="3510" y="1511" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="_WeXFQgnrd8vcBTq9_94-16" target="vV8HTxjCi_RAj6mCy8sG-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1440" y="950" />
+              <mxPoint x="1440" y="2673" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="_WeXFQgnrd8vcBTq9_94-16" target="vV8HTxjCi_RAj6mCy8sG-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1440" y="950" />
+              <mxPoint x="1440" y="3118" />
             </Array>
           </mxGeometry>
         </mxCell>
