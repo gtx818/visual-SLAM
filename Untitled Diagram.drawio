@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T11:14:24.037Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="0QyU7lg9ZNVky3D81tn5" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T12:05:38.286Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="HX8eBOXO-3qmUMqLkUnk" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -628,7 +628,7 @@
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-14" value="Tracking::TrackLocalMap()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
           <mxGeometry x="1600" y="2290" width="380" height="418" as="geometry" />
         </mxCell>
-        <mxCell id="PlLTtLYmkT2AqZDPCaeT-15" value="调用UpdateLastFrame函数扩充上一帧中的地图点mvpMapPoints数量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-15" value="调用UpdateLocalMap让与当前帧有关的关键帧均指向该帧，与这些关键帧相关的地图点均指向该帧" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
           <mxGeometry y="26" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-16" value="将当前帧的位姿初始化为运动模型mVelocity*上一帧的Tcw" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
@@ -746,6 +746,30 @@
         </mxCell>
         <mxCell id="qv-oUV_MYS-JjPGcxS9e-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="W-i74watzNnUxCvoC4qH-8" target="W-i74watzNnUxCvoC4qH-14">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qv-oUV_MYS-JjPGcxS9e-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="PlLTtLYmkT2AqZDPCaeT-24" target="W-i74watzNnUxCvoC4qH-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qv-oUV_MYS-JjPGcxS9e-2" value="Tracking::SearchLocalPoints()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="2068" y="2460" width="380" height="134" as="geometry" />
+        </mxCell>
+        <mxCell id="qv-oUV_MYS-JjPGcxS9e-3" value="遍历当前关键帧中的mvpMapPoints，调用地图点的increaseVisible()函数，并更新地图点的mnLastFrameSeen属性为当前帧Id" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="qv-oUV_MYS-JjPGcxS9e-2">
+          <mxGeometry y="26" width="380" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="qv-oUV_MYS-JjPGcxS9e-4" value="遍历mvpLocalMapPoints中的每个点，由于部分点在P3P中将属性置为了mnLastFrameSeen，跳过这部分点，随后" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="qv-oUV_MYS-JjPGcxS9e-2">
+          <mxGeometry y="70" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="qv-oUV_MYS-JjPGcxS9e-5" value="跟新局部地图点UpdateLocalPoints()" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="qv-oUV_MYS-JjPGcxS9e-2">
+          <mxGeometry y="100" width="380" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="qv-oUV_MYS-JjPGcxS9e-6" value="MapPoint::IncreaseVisible()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="2530" y="2848" width="380" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="qv-oUV_MYS-JjPGcxS9e-7" value="锁住mMutexFeatures" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="qv-oUV_MYS-JjPGcxS9e-6">
+          <mxGeometry y="26" width="380" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="qv-oUV_MYS-JjPGcxS9e-8" value="mnVIsible+1" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="qv-oUV_MYS-JjPGcxS9e-6">
+          <mxGeometry y="50" width="380" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
