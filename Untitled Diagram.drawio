@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T07:26:16.159Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="-djMXNfxiUUJeOcYPvUC" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T07:32:28.639Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="IqLIT8MNys7QbaRkgtK1" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -369,7 +369,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Fhw8bfbuc33Xyqhf_6aT-1" value="Tracking::StereoInitialization()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1440" y="736" width="380" height="374" as="geometry" />
+          <mxGeometry x="1420" y="734" width="380" height="374" as="geometry" />
         </mxCell>
         <mxCell id="Fhw8bfbuc33Xyqhf_6aT-2" value="仅在特征点数量N&amp;gt;500时执行，否则直接返回" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fhw8bfbuc33Xyqhf_6aT-1">
           <mxGeometry y="26" width="380" height="24" as="geometry" />
@@ -537,13 +537,25 @@
           <mxGeometry y="50" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="JUHuugl6f-nXhk04OkP1-0" value="Tracking::_Track_full()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1440" y="1160" width="380" height="170" as="geometry" />
+          <mxGeometry x="1420" y="1160" width="380" height="170" as="geometry" />
         </mxCell>
         <mxCell id="JUHuugl6f-nXhk04OkP1-1" value="检查当前状态mState是否为OK，若不是，则调用重定位函数Relocalization()" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="JUHuugl6f-nXhk04OkP1-0">
           <mxGeometry y="26" width="380" height="44" as="geometry" />
         </mxCell>
         <mxCell id="JUHuugl6f-nXhk04OkP1-2" value="若为OK，则首先调用CheckReplacedInLastFrame()函数，因为Local Mapping线程可能在上一帧中修改了一些地图点数据。随后若当前帧距上一次重定位不久或者运动模型mVelocity为空则跟踪参考关键帧TrackReferenceKeyFrame()，否则首先调用TrackWithMotionModel()，根据使用运动模型结果判断是否再掉哟昂TrackReferenceKeyFrame()，最终上述所有函数都会返回一个状态" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="JUHuugl6f-nXhk04OkP1-0">
           <mxGeometry y="70" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="JUHuugl6f-nXhk04OkP1-10" value="Tracking::CheckReplacedInLastFrame()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="1420" y="1378" width="380" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="JUHuugl6f-nXhk04OkP1-11" value="对mLastFrame帧中的每个地图点mvpMapPoints均进行检查，查看是否发生变化，调用GetReplaced函数，若返回的点数据中含有值，则表明发生变化，将mvpMapPoints更换为该返回值" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="JUHuugl6f-nXhk04OkP1-10">
+          <mxGeometry y="26" width="380" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="pLAkf531DFTIB7mjHat2-1" value="Map::GetReplaced()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="1860" y="1860" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pLAkf531DFTIB7mjHat2-2" value="锁住mMutexFeatures以及mMutexPos，返回mpReplaced" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLAkf531DFTIB7mjHat2-1">
+          <mxGeometry y="26" width="380" height="34" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -1308,7 +1320,7 @@
         <mxCell id="OgRzjuxoohxZ2CyamHj_-11" value="&lt;font&gt;mnVisible,&amp;nbsp;mnFound&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
           <mxGeometry y="308" width="710" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-12" value="&lt;font&gt;mbBad,&amp;nbsp;mpReplaced用于指示需要被删除的地图点尚未被删除&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-12" value="&lt;font&gt;mbBad,&amp;nbsp;mpReplaced用于指示需要被删除的地图点尚未被删除，以及在LocalMapping线程中被修改的地图点会暂存至这里&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
           <mxGeometry y="334" width="710" height="26" as="geometry" />
         </mxCell>
         <mxCell id="OgRzjuxoohxZ2CyamHj_-13" value="&lt;font&gt;mfMinDistance,&amp;nbsp;mfMaxDistance&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
