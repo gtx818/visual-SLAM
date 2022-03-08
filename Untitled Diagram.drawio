@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T03:22:54.626Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="HsIrr_cd0kB4DDC1LyfZ" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T03:32:19.821Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="mycpqEKcEckF8l-vCsrk" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -366,7 +366,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Fhw8bfbuc33Xyqhf_6aT-1" value="Tracking::StereoInitialization()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1440" y="736" width="380" height="98" as="geometry" />
+          <mxGeometry x="1440" y="736" width="380" height="140" as="geometry" />
         </mxCell>
         <mxCell id="Fhw8bfbuc33Xyqhf_6aT-2" value="仅在特征点数量N&amp;gt;500时执行" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fhw8bfbuc33Xyqhf_6aT-1">
           <mxGeometry y="26" width="380" height="24" as="geometry" />
@@ -375,7 +375,7 @@
           <mxGeometry y="50" width="380" height="24" as="geometry" />
         </mxCell>
         <mxCell id="76IdRFfovIAXzH4ugCji-0" value="对每个特征点做如下操作：a. 获得当前特征点的世界坐标；b. 根据世界坐标建立新的mapPoint; c. 为该MapPoint加入当前帧对应特征点的观测及序号; d. 为关键帧加入该地图点及序号; e.&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fhw8bfbuc33Xyqhf_6aT-1">
-          <mxGeometry y="74" width="380" height="24" as="geometry" />
+          <mxGeometry y="74" width="380" height="66" as="geometry" />
         </mxCell>
         <mxCell id="Fhw8bfbuc33Xyqhf_6aT-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="_WeXFQgnrd8vcBTq9_94-15" target="Fhw8bfbuc33Xyqhf_6aT-2">
           <mxGeometry relative="1" as="geometry" />
@@ -409,6 +409,42 @@
         </mxCell>
         <mxCell id="3xALqUJymXVdsjk-YRDI-3" value="更新该关键帧对应的mvpMapPoints点" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="3xALqUJymXVdsjk-YRDI-1">
           <mxGeometry y="50" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="touVyotahS0yNIuInN83-4" value="MapPoint::ComputeDistinctiveDescriptors()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="1860" y="1110" width="380" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="touVyotahS0yNIuInN83-5" value="锁住mMutexFeatures，首先查看mbBad为T时直接返回，否则读取当前地图点的所有观测mObservations，解锁" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="touVyotahS0yNIuInN83-4">
+          <mxGeometry y="26" width="380" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="touVyotahS0yNIuInN83-6" value="检查这些观测对应的KF是否Bad，如果F，则记录下该观测对应的描述符" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="touVyotahS0yNIuInN83-4">
+          <mxGeometry y="60" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="touVyotahS0yNIuInN83-7" value="计算上述描述符之间的距离，取总和距离最小的描述符作为该地图点的mDescriptor(在赋值之前先锁住mMutexFeatures)" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="touVyotahS0yNIuInN83-4">
+          <mxGeometry y="100" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="touVyotahS0yNIuInN83-8" value="KeyFrame::IsBad()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="2300" y="1136" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="touVyotahS0yNIuInN83-9" value="锁住mMutexConnections" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="touVyotahS0yNIuInN83-8">
+          <mxGeometry y="26" width="380" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="touVyotahS0yNIuInN83-10" value="返回mbBad" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="touVyotahS0yNIuInN83-8">
+          <mxGeometry y="50" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="touVyotahS0yNIuInN83-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.009;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="touVyotahS0yNIuInN83-6" target="touVyotahS0yNIuInN83-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="touVyotahS0yNIuInN83-12" value="MapPoint::ComputeDistinctiveDescriptors()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="1860" y="1280" width="380" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="touVyotahS0yNIuInN83-13" value="锁住mMutexFeatures，首先查看mbBad为T时直接返回，否则读取当前地图点的所有观测mObservations，解锁" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="touVyotahS0yNIuInN83-12">
+          <mxGeometry y="26" width="380" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="touVyotahS0yNIuInN83-14" value="检查这些观测对应的KF是否Bad，如果F，则记录下该观测对应的描述符" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="touVyotahS0yNIuInN83-12">
+          <mxGeometry y="60" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="touVyotahS0yNIuInN83-15" value="计算上述描述符之间的距离，取总和距离最小的描述符作为该地图点的mDescriptor(在赋值之前先锁住mMutexFeatures)" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="touVyotahS0yNIuInN83-12">
+          <mxGeometry y="100" width="380" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
