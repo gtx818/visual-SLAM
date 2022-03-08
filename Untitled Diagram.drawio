@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T03:12:47.693Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="_OTK_cCNwhNrCKzEvUKb" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T03:22:54.626Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="HsIrr_cd0kB4DDC1LyfZ" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -281,7 +281,7 @@
         <mxCell id="KNN6Kd6zlQ1QwXt9m6CE-1" value="mvKeys去畸变后存放至mvKeysUn" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="ELVMnGxV3x5qD8JtwuFI-2" vertex="1">
           <mxGeometry y="164" width="380" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="XAbaBJ8Ay5LwpOYeovHl-0" value="根据深度图计算得到双目右视图的特征点水平坐标以及深度值，存放在mvuRight以及mvDepth中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="ELVMnGxV3x5qD8JtwuFI-2" vertex="1">
+        <mxCell id="XAbaBJ8Ay5LwpOYeovHl-0" value="根据深度图计算得到双目右视图的特征点水平坐标以及深度值，存放在mvuRight（将RGB-D相机转换为双目相机统一计算）以及mvDepth中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="ELVMnGxV3x5qD8JtwuFI-2" vertex="1">
           <mxGeometry y="190" width="380" height="44" as="geometry" />
         </mxCell>
         <mxCell id="_WeXFQgnrd8vcBTq9_94-4" value="根据特征点数量初始化当前帧对应的地图点mvpMapPoints(NULL)以及mvbOutlier(F)" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="ELVMnGxV3x5qD8JtwuFI-2" vertex="1">
@@ -381,12 +381,33 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="atI36oa5GZ2zJVxQVEiG-0" value="Map::AddKeyFrame()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1870" y="736" width="380" height="90" as="geometry" />
+          <mxGeometry x="1860" y="740" width="380" height="90" as="geometry" />
         </mxCell>
         <mxCell id="atI36oa5GZ2zJVxQVEiG-1" value="锁住mMutexMap" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="atI36oa5GZ2zJVxQVEiG-0">
           <mxGeometry y="26" width="380" height="24" as="geometry" />
         </mxCell>
         <mxCell id="atI36oa5GZ2zJVxQVEiG-2" value="mspKeyFrames加入一新关键帧，且若该关键帧的Id大于目前的mnMaxKFid则更新mnMaxKFid" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="atI36oa5GZ2zJVxQVEiG-0">
+          <mxGeometry y="50" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7Ngc82hc2Vxno5qJjCof-0" value="MapPoint::AddObservation()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="1860" y="850" width="380" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="7Ngc82hc2Vxno5qJjCof-1" value="锁住mMutexFeatures" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="7Ngc82hc2Vxno5qJjCof-0">
+          <mxGeometry y="26" width="380" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="7Ngc82hc2Vxno5qJjCof-2" value="检测mObservations是否KF对应的该点已有观测，如果有直接返回，如果没有更新mObservations中KF对应的观测序号为该特征点的序号" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="7Ngc82hc2Vxno5qJjCof-0">
+          <mxGeometry y="50" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3xALqUJymXVdsjk-YRDI-0" value="如果该特征点对应的mvuRight值大于0，nObs+2否则+1" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="7Ngc82hc2Vxno5qJjCof-0">
+          <mxGeometry y="90" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3xALqUJymXVdsjk-YRDI-1" value="KeyFrame::AddMapPoint()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="1860" y="1000" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="3xALqUJymXVdsjk-YRDI-2" value="锁住mMutexFeatures" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="3xALqUJymXVdsjk-YRDI-1">
+          <mxGeometry y="26" width="380" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="3xALqUJymXVdsjk-YRDI-3" value="更新该关键帧对应的mvpMapPoints点" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="3xALqUJymXVdsjk-YRDI-1">
           <mxGeometry y="50" width="380" height="40" as="geometry" />
         </mxCell>
       </root>
@@ -1093,7 +1114,7 @@
         <mxCell id="PSJabHfmMre-id2QDP9c-7" value="&lt;font&gt;mpMap&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="tM2bp_woGz9pf5QqKiOk-0">
           <mxGeometry y="486" width="510" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="PSJabHfmMre-id2QDP9c-8" value="&lt;font&gt;mMutexPose, mMutexConnections, mMutexFeatures&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="tM2bp_woGz9pf5QqKiOk-0">
+        <mxCell id="PSJabHfmMre-id2QDP9c-8" value="&lt;font&gt;mMutexPose, mMutexConnections, mMutexFeatures更新当前KF对应的地图点时锁住&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="tM2bp_woGz9pf5QqKiOk-0">
           <mxGeometry y="512" width="510" height="26" as="geometry" />
         </mxCell>
         <mxCell id="PSJabHfmMre-id2QDP9c-9" value="KeyFrame()，输入帧，地图以及关键帧数据库" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="AD4IZn2h6SyMF1I8jG7n-1">
@@ -1161,7 +1182,7 @@
         <mxCell id="OgRzjuxoohxZ2CyamHj_-14" value="&lt;font&gt;mpMap&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
           <mxGeometry y="386" width="710" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-15" value="&lt;font&gt;mMutexPos,&amp;nbsp;mMutexFeatures&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-15" value="&lt;font&gt;mMutexPos,&amp;nbsp;mMutexFeatures当更新地图点观测时锁住&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
           <mxGeometry y="412" width="710" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ehbi-_0X2H-uTA-JZ6WJ-0" value="MapPoint()以构建该地图点的帧序号以及关键帧序号创建" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="2tkq9h_ntyGmWSwttg7b-1">
