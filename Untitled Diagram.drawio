@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T05:04:56.091Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="WcsKvdiK25svbVnblhed" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T05:08:52.051Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="Yafd8mS3FFnagklNUNPA" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -841,7 +841,7 @@
         <mxCell id="4fdpuZO_QBha4YaecK2Q-30" value="初始化mbOnlyTracking(F), mbVO(false),mbNewSegImgFlag(F),mpORBVocabulary, mpPointCloudMapping, mpKeyFrameDB, mpInitializer, mpSystem, mpMap, mnLastRelocFrameID(0)" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" parent="4fdpuZO_QBha4YaecK2Q-29" vertex="1">
           <mxGeometry y="26" width="560" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="k-eVFCMZ1kDdMW_gKI8o-0" value="初始化mState为NO_IMAGES_YET状态" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" parent="4fdpuZO_QBha4YaecK2Q-29" vertex="1">
+        <mxCell id="k-eVFCMZ1kDdMW_gKI8o-0" value="若mpMap中不含有KeyFrame，则初始化mState为NO_IMAGES_YET状态，否则初始化mState为LOST状态，mbOnlyTracking(T)，设置mpReferenceKF为第0帧关键帧" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" parent="4fdpuZO_QBha4YaecK2Q-29" vertex="1">
           <mxGeometry y="70" width="560" height="44" as="geometry" />
         </mxCell>
         <mxCell id="4fdpuZO_QBha4YaecK2Q-31" value="mMinFrames=0,mMaxFrames=fps, mbRGB顺序获知" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" parent="4fdpuZO_QBha4YaecK2Q-29" vertex="1">
