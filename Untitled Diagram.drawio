@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T11:03:26.164Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="Y3ZFPN9vOYvFfucXbUof" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T11:04:42.059Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="8iZ9CNd0aXgWvT9vGG0t" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -678,7 +678,7 @@
         <mxCell id="H2_LTvpVsOFjdVCVfYnH-0" value="将上述关键帧记录至mvpLocalKeyFrames中(在这个过程中会调用KeyFrame::IsBad()滤去一些关键帧)，并更新这些关键帧的mnTrackReferenceForFrame为当前帧的Id" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-29">
           <mxGeometry y="104" width="380" height="56" as="geometry" />
         </mxCell>
-        <mxCell id="H2_LTvpVsOFjdVCVfYnH-1" value="对上述关键帧分别调用GetBestCovisibilityKeyFrames,&amp;nbsp;GetChilds以及GetParent函数，获取这些关键帧的相邻帧，子帧以及父帧，随后将这些帧的mnTrackReferenceForFrame置为当前帧的Id，并记录至mvpLocalKeyFrames中（不过当mvpLocalKeyFrames&amp;gt;80时不执行）" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-29">
+        <mxCell id="H2_LTvpVsOFjdVCVfYnH-1" value="对上述关键帧分别调用GetBestCovisibilityKeyFrames,&amp;nbsp;GetChilds以及GetParent函数，获取这些关键帧的相邻帧，子帧以及父帧，随后将这些帧的mnTrackReferenceForFrame置为当前帧的Id，并记录至mvpLocalKeyFrames中（不过当mvpLocalKeyFrames&amp;gt;80时跳出）" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-29">
           <mxGeometry y="160" width="380" height="70" as="geometry" />
         </mxCell>
         <mxCell id="H2_LTvpVsOFjdVCVfYnH-2" value="mpReferenceKF以及当前帧的mpReferenceKF更新为最多地图点数量的那个关键帧" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-29">
@@ -688,10 +688,13 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="H2_LTvpVsOFjdVCVfYnH-4" value="KeyFrame::GetBestCovisibilityKeyFrames()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="2990" y="2360" width="380" height="60" as="geometry" />
+          <mxGeometry x="2990" y="2360" width="380" height="100" as="geometry" />
         </mxCell>
         <mxCell id="H2_LTvpVsOFjdVCVfYnH-5" value="锁住mMutexConnections" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="H2_LTvpVsOFjdVCVfYnH-4">
           <mxGeometry y="26" width="380" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="H2_LTvpVsOFjdVCVfYnH-6" value="根据输入的N个连接数返回mvpOrderedConnectedKeyFrames中前N个关键帧，若小于N则返回全部" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="H2_LTvpVsOFjdVCVfYnH-4">
+          <mxGeometry y="60" width="380" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
