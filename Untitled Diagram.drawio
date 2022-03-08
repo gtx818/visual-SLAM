@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T12:53:27.217Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="viOxP80ltYxpidt1WG2i" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T12:55:54.268Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="1fNIzHzA7-6keVN7-qck" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -751,7 +751,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="qv-oUV_MYS-JjPGcxS9e-2" value="Tracking::SearchLocalPoints()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="2068" y="2460" width="380" height="174" as="geometry" />
+          <mxGeometry x="2068" y="2460" width="380" height="190" as="geometry" />
         </mxCell>
         <mxCell id="qv-oUV_MYS-JjPGcxS9e-3" value="遍历当前关键帧中的mvpMapPoints，调用地图点的increaseVisible()函数，并更新地图点的mnLastFrameSeen属性为当前帧Id" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="qv-oUV_MYS-JjPGcxS9e-2">
           <mxGeometry y="26" width="380" height="44" as="geometry" />
@@ -759,8 +759,8 @@
         <mxCell id="qv-oUV_MYS-JjPGcxS9e-4" value="遍历mvpLocalMapPoints中的每个点，由于部分点在P3P中将属性置为了mnLastFrameSeen，跳过这部分点，随后判断遍历的点是否满足相关要求调用isInFrustum，如果满足要求，调用该点的increaseVisible()函数增加mnVisible属性，" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="qv-oUV_MYS-JjPGcxS9e-2">
           <mxGeometry y="70" width="380" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="qv-oUV_MYS-JjPGcxS9e-5" value="将" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="qv-oUV_MYS-JjPGcxS9e-2">
-          <mxGeometry y="140" width="380" height="34" as="geometry" />
+        <mxCell id="qv-oUV_MYS-JjPGcxS9e-5" value="将所有地图点利用投影函数以及进一步的匹配策略确定匹配对数（仅当地图点mbTrackInView&lt;br&gt;属性为T才会与当前帧地图点匹配），并更新mCurrentFrame的mvpMapPoints" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="qv-oUV_MYS-JjPGcxS9e-2">
+          <mxGeometry y="140" width="380" height="50" as="geometry" />
         </mxCell>
         <mxCell id="qv-oUV_MYS-JjPGcxS9e-6" value="MapPoint::IncreaseVisible()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
           <mxGeometry x="2530" y="2848" width="380" height="82" as="geometry" />
@@ -1526,7 +1526,7 @@
         <mxCell id="OgRzjuxoohxZ2CyamHj_-1" value="mnId, nNextId, mnFirstKFid, mnFirstFrame, nObs记录当前地图点有多少个观测" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
           <mxGeometry y="26" width="710" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-2" value="mTrackProjX,&amp;nbsp;mTrackProjY,&amp;nbsp;mTrackProjXR,&amp;nbsp;mbTrackInView,&amp;nbsp;mnTrackScaleLevel,&amp;nbsp;mnTrackReferenceForFrame,&amp;nbsp;mnLastFrameSeen用于Track过程中的变量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-2" value="mTrackProjX,&amp;nbsp;mTrackProjY,&amp;nbsp;mTrackProjXR,&amp;nbsp;mbTrackInView用于指示地图点投影到当前坐标系中是否满足相关要求,&amp;nbsp;mnTrackScaleLevel,&amp;nbsp;mnTrackReferenceForFrame,&amp;nbsp;mnLastFrameSeen用于Track过程中的变量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
           <mxGeometry y="50" width="710" height="50" as="geometry" />
         </mxCell>
         <mxCell id="OgRzjuxoohxZ2CyamHj_-3" value="mnBALocalForKF,&amp;nbsp;mnFuseCandidateForKF用于LocalMapping中的变量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
