@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T12:55:54.268Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="1fNIzHzA7-6keVN7-qck" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T13:00:57.991Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="YGIqDSKMkzsQt1ZuNoWl" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -626,28 +626,28 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-14" value="Tracking::TrackLocalMap()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1600" y="2290" width="380" height="418" as="geometry" />
+          <mxGeometry x="1600" y="2290" width="380" height="462" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-15" value="调用UpdateLocalMap让与当前帧有关的关键帧均指向该帧，与这些关键帧相关的地图点均指向该帧" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
           <mxGeometry y="26" width="380" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="PlLTtLYmkT2AqZDPCaeT-16" value="将当前帧的位姿初始化为运动模型mVelocity*上一帧的Tcw" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
-          <mxGeometry y="66" width="380" height="40" as="geometry" />
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-16" value="确定LocalMap中与当前帧能够匹配上的地图点SearchLocalPoints()，调用Optimizer::Optimization函数仅优化位姿，注意这里使用了深度信息进行优化并且使用P3P，当前帧对应的3D地图点以及2D观测点，优化之后会更新mCurrentFrame的mvbOutlier信息以及调用setPose()函数更新位姿Tcw相关信息" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
+          <mxGeometry y="66" width="380" height="84" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-17" value="利用投影函数以及进一步的匹配策略确定匹配对数，并更新mCurrentFrame的mvpMapPoints，若匹配对数&amp;lt;20，则扩大搜索窗口，将mvpMapPoints置为NULL，再次进行搜索匹配，如果还是&amp;lt;20返回False" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
-          <mxGeometry y="106" width="380" height="74" as="geometry" />
+          <mxGeometry y="150" width="380" height="74" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-18" value="调用Optimizer::Optimization函数仅优化位姿，注意这里使用了深度信息进行优化并且使用P3P，当前帧对应的3D地图点以及2D观测点，优化之后会更新mCurrentFrame的mvbOutlier信息以及调用setPose()函数更新位姿Tcw相关信息" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
-          <mxGeometry y="180" width="380" height="74" as="geometry" />
+          <mxGeometry y="224" width="380" height="74" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-19" value="丢弃Outliers，遍历所有特征点，如果有对应的地图点则执行以下操作：&lt;br&gt;1) 若该地图点的mvbOutlier为T，以NULL清空对应的mvpMapPoints，mvbOutlier置为F，该地图点的mnLastFrameSeen属性置为当前帧的Id，匹配对数-1&lt;br&gt;2) 若mvbOutlier为F，检查该点的nObs数是否大于0，若大于0则nmatchesMap+1&lt;br&gt;3) 若nmatchesMap&amp;gt;=10返回T，否则F" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
-          <mxGeometry y="254" width="380" height="124" as="geometry" />
+          <mxGeometry y="298" width="380" height="124" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-20" value="若mbOnlyTracking为真，此时若nmatchesMap&amp;lt;10，记录mbVO为T，否则为F，最后若匹配对数&amp;gt;20返回T，否则返回F" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
-          <mxGeometry y="378" width="380" height="40" as="geometry" />
+          <mxGeometry y="422" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-21" value="Tracking::UpdateLocalMap()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="2068" y="2290" width="380" height="134" as="geometry" />
+          <mxGeometry x="2068" y="2293" width="380" height="134" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-22" value="根据mvpLocalMapPoints更新mpMap的参考地图点" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-21">
           <mxGeometry y="26" width="380" height="34" as="geometry" />
@@ -751,16 +751,16 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="qv-oUV_MYS-JjPGcxS9e-2" value="Tracking::SearchLocalPoints()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="2068" y="2460" width="380" height="190" as="geometry" />
+          <mxGeometry x="2070" y="2460" width="378" height="190" as="geometry" />
         </mxCell>
         <mxCell id="qv-oUV_MYS-JjPGcxS9e-3" value="遍历当前关键帧中的mvpMapPoints，调用地图点的increaseVisible()函数，并更新地图点的mnLastFrameSeen属性为当前帧Id" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="qv-oUV_MYS-JjPGcxS9e-2">
-          <mxGeometry y="26" width="380" height="44" as="geometry" />
+          <mxGeometry y="26" width="378" height="44" as="geometry" />
         </mxCell>
         <mxCell id="qv-oUV_MYS-JjPGcxS9e-4" value="遍历mvpLocalMapPoints中的每个点，由于部分点在P3P中将属性置为了mnLastFrameSeen，跳过这部分点，随后判断遍历的点是否满足相关要求调用isInFrustum，如果满足要求，调用该点的increaseVisible()函数增加mnVisible属性，" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="qv-oUV_MYS-JjPGcxS9e-2">
-          <mxGeometry y="70" width="380" height="70" as="geometry" />
+          <mxGeometry y="70" width="378" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="qv-oUV_MYS-JjPGcxS9e-5" value="将所有地图点利用投影函数以及进一步的匹配策略确定匹配对数（仅当地图点mbTrackInView&lt;br&gt;属性为T才会与当前帧地图点匹配），并更新mCurrentFrame的mvpMapPoints" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="qv-oUV_MYS-JjPGcxS9e-2">
-          <mxGeometry y="140" width="380" height="50" as="geometry" />
+        <mxCell id="qv-oUV_MYS-JjPGcxS9e-5" value="将所有地图点利用投影函数以及进一步的匹配策略确定匹配对数（仅当地图点mbTrackInView属性为T才会与当前帧地图点匹配），并更新mCurrentFrame的mvpMapPoints" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="qv-oUV_MYS-JjPGcxS9e-2">
+          <mxGeometry y="140" width="378" height="50" as="geometry" />
         </mxCell>
         <mxCell id="qv-oUV_MYS-JjPGcxS9e-6" value="MapPoint::IncreaseVisible()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
           <mxGeometry x="2530" y="2848" width="380" height="82" as="geometry" />
@@ -792,6 +792,12 @@
               <mxPoint x="2460" y="3073" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="PlLTtLYmkT2AqZDPCaeT-15" target="PlLTtLYmkT2AqZDPCaeT-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#FF0000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="PlLTtLYmkT2AqZDPCaeT-16" target="qv-oUV_MYS-JjPGcxS9e-3">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
