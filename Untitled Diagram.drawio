@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T14:07:50.240Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="EF3SOdjpjzPvL1Se7YIC" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T14:41:32.599Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="YwX5vp3mZfl4i1153m1V" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -168,7 +168,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="NEFC5_riWzsDIuWnUayE" name="Main">
-    <mxGraphModel dx="769" dy="1677" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="905" dy="1767" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="XBM9AIjGbo9Ioxt-2AgH-0" />
         <mxCell id="XBM9AIjGbo9Ioxt-2AgH-1" parent="XBM9AIjGbo9Ioxt-2AgH-0" />
@@ -805,7 +805,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="vV8HTxjCi_RAj6mCy8sG-6" value="Tracking::NeedNewKeyFrame()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1600" y="2620" width="380" height="322" as="geometry" />
+          <mxGeometry x="1600" y="2620" width="380" height="410" as="geometry" />
         </mxCell>
         <mxCell id="vV8HTxjCi_RAj6mCy8sG-7" value="若mbOnlyTracking为T，返回F；&lt;br&gt;若mpLocalMapper中的mbStopped或mbStopRequested为T，表明现在LoopClosure阻塞了该线程，因此返回F" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-6">
           <mxGeometry y="26" width="380" height="54" as="geometry" />
@@ -816,8 +816,85 @@
         <mxCell id="vV8HTxjCi_RAj6mCy8sG-9" value="记录参考关键帧mpReferenceKF中地图点的观测数大于3或2(当nKFs&amp;lt;=2时)的个数，调用KeyFrame::TrackedMapPoints函数" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-6">
           <mxGeometry y="120" width="380" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="vV8HTxjCi_RAj6mCy8sG-10" value="检测LocalMapper是否允许加入新关键帧，调用LocalMapping::AcceptKeyFrames函数" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-6">
-          <mxGeometry y="160" width="380" height="40" as="geometry" />
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-10" value="检测LocalMapper是否允许加入新关键帧，调用LocalMapping::AcceptKeyFrames函数，记录下这一状态为bLocalMappingIdle" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-6">
+          <mxGeometry y="160" width="380" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-12" value="对于双目以及RGB-D相机，作者将特征点分为了两种，一种是visual odometry matches另一种是matches to map，当该帧确立为关键帧后，visual odometry matches会全部加入MapPoints&lt;span style=&quot;font-size: 10px&quot;&gt;，因此利用这两者的比值可以知道有多少点会被加入地图中，前者通过mvDepth位于(0,mThDepth)区间统计得到，后者则在前者的基础上找寻mvpMapPoints中的点&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-6">
+          <mxGeometry y="210" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-11" value="多种情况判断。。。此处省略" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-6">
+          <mxGeometry y="310" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-13" value="Tracking::CreateNewKeyFrame()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="1600" y="3070" width="380" height="328" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-14" value="调用LocalMapping::SetNotStop(True)函数，若LocalMapping线程仍然处于阻塞状态则直接返回" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-13">
+          <mxGeometry y="26" width="380" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-15" value="根据当前帧创建新关键帧，当前帧的参考关键帧设置为当前帧，调用UpdatePoseMatrices更新mRcw,mRwc,mtcw,mOw" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-13">
+          <mxGeometry y="70" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-16" value="补充新的地图点，对当前帧所有特征点深度值排序，从最近的开始取，如果该点在mvpMapPoints中没有对应，或者有对应但nObs&amp;lt;1则需要将该点补充为新的地图点，具体操作如下：&lt;br&gt;a. 获得当前特征点的世界坐标；b. 根据世界坐标建立新的mapPoint; c. 为该MapPoint加入当前帧对应特征点的观测及序号; d. 为关键帧加入该地图点及序号; e. 更新该MapPoint的法线，描述子以及最大最小距离; f. 更新mpMap中的地图点; g. 为当前帧中的mvpMapPoints增加该地图点" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-13">
+          <mxGeometry y="110" width="380" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-20" value="若加入的点数超过100且当前点的mvDepth超过mThDepth则结束循环" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-13">
+          <mxGeometry y="240" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-22" value="mpLocalMapper中插入该关键帧InsertKeyFrame函数" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="vV8HTxjCi_RAj6mCy8sG-13">
+          <mxGeometry y="270" width="380" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontColor=#FF0000;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="vV8HTxjCi_RAj6mCy8sG-22" target="touVyotahS0yNIuInN83-32">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="3410" y="2210" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3690" y="3362" />
+              <mxPoint x="3690" y="1613" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="vV8HTxjCi_RAj6mCy8sG-16" target="7Ngc82hc2Vxno5qJjCof-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3510" y="3245" />
+              <mxPoint x="3510" y="918" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="vV8HTxjCi_RAj6mCy8sG-16" target="3xALqUJymXVdsjk-YRDI-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3510" y="3245" />
+              <mxPoint x="3510" y="1036" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="vV8HTxjCi_RAj6mCy8sG-16" target="touVyotahS0yNIuInN83-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2050" y="3220" as="sourcePoint" />
+            <mxPoint x="2572" y="1046" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3510" y="3245" />
+              <mxPoint x="3510" y="1280" />
+              <mxPoint x="2590" y="1280" />
+              <mxPoint x="2590" y="1188" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="vV8HTxjCi_RAj6mCy8sG-16" target="touVyotahS0yNIuInN83-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3510" y="3245" />
+              <mxPoint x="3510" y="1331" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vV8HTxjCi_RAj6mCy8sG-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="vV8HTxjCi_RAj6mCy8sG-16" target="touVyotahS0yNIuInN83-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3510" y="3245" />
+              <mxPoint x="3510" y="1511" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
