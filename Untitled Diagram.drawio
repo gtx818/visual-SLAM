@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T13:00:57.991Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="YGIqDSKMkzsQt1ZuNoWl" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T13:25:31.145Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="14li8YtSemvrgET_QrQI" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -626,7 +626,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-14" value="Tracking::TrackLocalMap()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1600" y="2290" width="380" height="462" as="geometry" />
+          <mxGeometry x="1600" y="2290" width="380" height="298" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-15" value="调用UpdateLocalMap让与当前帧有关的关键帧均指向该帧，与这些关键帧相关的地图点均指向该帧" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
           <mxGeometry y="26" width="380" height="40" as="geometry" />
@@ -634,17 +634,11 @@
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-16" value="确定LocalMap中与当前帧能够匹配上的地图点SearchLocalPoints()，调用Optimizer::Optimization函数仅优化位姿，注意这里使用了深度信息进行优化并且使用P3P，当前帧对应的3D地图点以及2D观测点，优化之后会更新mCurrentFrame的mvbOutlier信息以及调用setPose()函数更新位姿Tcw相关信息" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
           <mxGeometry y="66" width="380" height="84" as="geometry" />
         </mxCell>
-        <mxCell id="PlLTtLYmkT2AqZDPCaeT-17" value="利用投影函数以及进一步的匹配策略确定匹配对数，并更新mCurrentFrame的mvpMapPoints，若匹配对数&amp;lt;20，则扩大搜索窗口，将mvpMapPoints置为NULL，再次进行搜索匹配，如果还是&amp;lt;20返回False" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
-          <mxGeometry y="150" width="380" height="74" as="geometry" />
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-17" value="遍历当前帧中mvpMapPoints中的每个元素，若其mvbOutlier属性为F，则调用increaseFound函数增加该元素的mnFound属性，继续判断mbOnlyTracking是否为T，若为T，则直接增加mnMatchesInliers，否则先判断该元素的Observations是否&amp;gt;0，若大于0则增加mnMatchesInliers" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
+          <mxGeometry y="150" width="380" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="PlLTtLYmkT2AqZDPCaeT-18" value="调用Optimizer::Optimization函数仅优化位姿，注意这里使用了深度信息进行优化并且使用P3P，当前帧对应的3D地图点以及2D观测点，优化之后会更新mCurrentFrame的mvbOutlier信息以及调用setPose()函数更新位姿Tcw相关信息" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
-          <mxGeometry y="224" width="380" height="74" as="geometry" />
-        </mxCell>
-        <mxCell id="PlLTtLYmkT2AqZDPCaeT-19" value="丢弃Outliers，遍历所有特征点，如果有对应的地图点则执行以下操作：&lt;br&gt;1) 若该地图点的mvbOutlier为T，以NULL清空对应的mvpMapPoints，mvbOutlier置为F，该地图点的mnLastFrameSeen属性置为当前帧的Id，匹配对数-1&lt;br&gt;2) 若mvbOutlier为F，检查该点的nObs数是否大于0，若大于0则nmatchesMap+1&lt;br&gt;3) 若nmatchesMap&amp;gt;=10返回T，否则F" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
-          <mxGeometry y="298" width="380" height="124" as="geometry" />
-        </mxCell>
-        <mxCell id="PlLTtLYmkT2AqZDPCaeT-20" value="若mbOnlyTracking为真，此时若nmatchesMap&amp;lt;10，记录mbVO为T，否则为F，最后若匹配对数&amp;gt;20返回T，否则返回F" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
-          <mxGeometry y="422" width="380" height="40" as="geometry" />
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-18" value="其他返回F的两种情况：&lt;br&gt;1. 若当前帧距重定位过后不久，且mnMatchesInliers&amp;lt;50;&lt;br&gt;2. 若mnMatchesInliers&amp;lt;30;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-14">
+          <mxGeometry y="240" width="380" height="58" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-21" value="Tracking::UpdateLocalMap()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
           <mxGeometry x="2068" y="2293" width="380" height="134" as="geometry" />
