@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T02:40:28.401Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="Yo3g1shv_Y1qrh7Zq-Pk" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T02:49:24.427Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="NB5R8u5xWtmsKuIvkzYy" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -168,7 +168,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="NEFC5_riWzsDIuWnUayE" name="Main">
-    <mxGraphModel dx="782" dy="1677" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="769" dy="1677" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="XBM9AIjGbo9Ioxt-2AgH-0" />
         <mxCell id="XBM9AIjGbo9Ioxt-2AgH-1" parent="XBM9AIjGbo9Ioxt-2AgH-0" />
@@ -393,7 +393,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="SY-_o7IUkK4LBvVgOJHN" name="System">
-    <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="769" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="jMa5dYvX6v_q3Ia01rmw-0" />
         <mxCell id="jMa5dYvX6v_q3Ia01rmw-1" parent="jMa5dYvX6v_q3Ia01rmw-0" />
@@ -1112,57 +1112,69 @@
     </mxGraphModel>
   </diagram>
   <diagram id="-Nk5z10qJ6UGHRVcg5QB" name="MapPoint">
-    <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="769" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="2tkq9h_ntyGmWSwttg7b-0" />
         <mxCell id="2tkq9h_ntyGmWSwttg7b-1" parent="2tkq9h_ntyGmWSwttg7b-0" />
         <mxCell id="OgRzjuxoohxZ2CyamHj_-0" value="MapPoint类" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="2tkq9h_ntyGmWSwttg7b-1">
           <mxGeometry x="40" y="10" width="710" height="458" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-1" value="mnId, nNextId, mnFirstKFid, mnFirstFrame, nObs记录当前地图点有多少个观测" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
-          <mxGeometry y="26" width="710" height="44" as="geometry" />
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-1" value="mnId, nNextId, mnFirstKFid, mnFirstFrame, nObs记录当前地图点有多少个观测" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+          <mxGeometry y="26" width="710" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-2" value="mTrackProjX,&amp;nbsp;mTrackProjY,&amp;nbsp;mTrackProjXR,&amp;nbsp;mbTrackInView,&amp;nbsp;mnTrackScaleLevel,&amp;nbsp;mnTrackReferenceForFrame,&amp;nbsp;mnLastFrameSeen用于Track过程中的变量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
-          <mxGeometry y="70" width="710" height="50" as="geometry" />
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-2" value="mTrackProjX,&amp;nbsp;mTrackProjY,&amp;nbsp;mTrackProjXR,&amp;nbsp;mbTrackInView,&amp;nbsp;mnTrackScaleLevel,&amp;nbsp;mnTrackReferenceForFrame,&amp;nbsp;mnLastFrameSeen用于Track过程中的变量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+          <mxGeometry y="50" width="710" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-3" value="mnBALocalForKF,&amp;nbsp;mnFuseCandidateForKF用于LocalMapping中的变量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
-          <mxGeometry y="120" width="710" height="26" as="geometry" />
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-3" value="mnBALocalForKF,&amp;nbsp;mnFuseCandidateForKF用于LocalMapping中的变量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+          <mxGeometry y="100" width="710" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-4" value="mnLoopPointForKF,&amp;nbsp;mnCorrectedByKF,&amp;nbsp;mnCorrectedReference,&amp;nbsp;mPosGBA,&amp;nbsp;mnBAGlobalForKF用于回环检测变量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
-          <mxGeometry y="146" width="710" height="26" as="geometry" />
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-4" value="mnLoopPointForKF,&amp;nbsp;mnCorrectedByKF,&amp;nbsp;mnCorrectedReference,&amp;nbsp;mPosGBA,&amp;nbsp;mnBAGlobalForKF用于回环检测变量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+          <mxGeometry y="126" width="710" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-5" value="mGlobalMutex" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
-          <mxGeometry y="172" width="710" height="26" as="geometry" />
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-5" value="mGlobalMutex" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#FF0000;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+          <mxGeometry y="152" width="710" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-6" value="mWorldPos世界坐标系下的位置" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
-          <mxGeometry y="198" width="710" height="26" as="geometry" />
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-6" value="mWorldPos世界坐标系下的位置" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+          <mxGeometry y="178" width="710" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-7" value="mObservations是map类型的数据，记录观测到该MapPoint的关键帧以及在帧中的序号" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
-          <mxGeometry y="224" width="710" height="26" as="geometry" />
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-7" value="mObservations是map类型的数据，记录观测到该MapPoint的关键帧以及在帧中的序号" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+          <mxGeometry y="204" width="710" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-8" value="mNormalVector平均法线向量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
-          <mxGeometry y="250" width="710" height="26" as="geometry" />
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-8" value="mNormalVector平均法线向量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+          <mxGeometry y="230" width="710" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-9" value="&lt;font color=&quot;#ff1605&quot;&gt;mDescriptor最优描述子&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
-          <mxGeometry y="276" width="710" height="26" as="geometry" />
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-9" value="&lt;font&gt;mDescriptor最优描述子&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+          <mxGeometry y="256" width="710" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-10" value="&lt;font color=&quot;#ff1605&quot;&gt;mpRefKF参考关键帧&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
-          <mxGeometry y="302" width="710" height="26" as="geometry" />
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-10" value="&lt;font&gt;mpRefKF参考关键帧&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+          <mxGeometry y="282" width="710" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-11" value="&lt;font color=&quot;#ff1605&quot;&gt;mnVisible,&amp;nbsp;mnFound&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
-          <mxGeometry y="328" width="710" height="26" as="geometry" />
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-11" value="&lt;font&gt;mnVisible,&amp;nbsp;mnFound&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+          <mxGeometry y="308" width="710" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-12" value="&lt;font color=&quot;#ff1605&quot;&gt;mbBad,&amp;nbsp;mpReplaced用于指示需要被删除的地图点尚未被删除&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
-          <mxGeometry y="354" width="710" height="26" as="geometry" />
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-12" value="&lt;font&gt;mbBad,&amp;nbsp;mpReplaced用于指示需要被删除的地图点尚未被删除&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+          <mxGeometry y="334" width="710" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-13" value="&lt;font color=&quot;#ff1605&quot;&gt;mfMinDistance,&amp;nbsp;mfMaxDistance&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
-          <mxGeometry y="380" width="710" height="26" as="geometry" />
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-13" value="&lt;font&gt;mfMinDistance,&amp;nbsp;mfMaxDistance&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+          <mxGeometry y="360" width="710" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-14" value="&lt;font color=&quot;#ff1605&quot;&gt;mpMap&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
-          <mxGeometry y="406" width="710" height="26" as="geometry" />
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-14" value="&lt;font&gt;mpMap&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+          <mxGeometry y="386" width="710" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="OgRzjuxoohxZ2CyamHj_-15" value="&lt;font color=&quot;#ff1605&quot;&gt;mMutexPos,&amp;nbsp;mMutexFeatures&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
-          <mxGeometry y="432" width="710" height="26" as="geometry" />
+        <mxCell id="OgRzjuxoohxZ2CyamHj_-15" value="&lt;font&gt;mMutexPos,&amp;nbsp;mMutexFeatures&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" vertex="1" parent="OgRzjuxoohxZ2CyamHj_-0">
+          <mxGeometry y="412" width="710" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ehbi-_0X2H-uTA-JZ6WJ-0" value="MapPoint()以构建该地图点的帧序号以及特征点序号创建" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="2tkq9h_ntyGmWSwttg7b-1">
+          <mxGeometry x="820" y="10" width="590" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ehbi-_0X2H-uTA-JZ6WJ-1" value="&lt;div&gt;初始化mnFirstKFid, mnFirstFrame, nObs(0), mnTrackReferenceForFrame(0),&amp;nbsp;&lt;span&gt;mnLastFrameSeen(0), mnBALocalForKF(0), mnFuseCandidateForKF(0), mnLoopPointForKF(0), mnCorrectedByKF(0),&amp;nbsp;&lt;/span&gt;&lt;span&gt;mnCorrectedReference(0), mnBAGlobalForKF(0), mpRefKF(static_cast&amp;lt;KeyFrame*&amp;gt;(NULL)), mnVisible(1), mnFound(1), mbBad(false),&lt;/span&gt;&lt;span&gt;&amp;nbsp;mpReplaced(static_cast&amp;lt;MapPoint*&amp;gt;(NULL)), mfMinDistance(0), mfMaxDistance(0), mpMap(pMap)&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ehbi-_0X2H-uTA-JZ6WJ-0">
+          <mxGeometry y="26" width="590" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="ehbi-_0X2H-uTA-JZ6WJ-2" value="初始化mWorldPos,&amp;nbsp;mNormalVector(0)" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ehbi-_0X2H-uTA-JZ6WJ-0">
+          <mxGeometry y="110" width="590" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ehbi-_0X2H-uTA-JZ6WJ-3" value="锁住mpMap-&amp;gt;mMutexPointCreation，因为在LocalMapping以及LoopClosing也会更改地图点，故要锁住，mnId=nNextId++" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ehbi-_0X2H-uTA-JZ6WJ-0">
+          <mxGeometry y="136" width="590" height="44" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
