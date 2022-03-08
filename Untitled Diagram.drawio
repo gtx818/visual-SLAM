@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T07:34:38.280Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="2QOfHQIjY8Db6oB7ZR_h" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T08:17:36.009Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="ruNFngWJyiIjyyMIDO1r" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -571,11 +571,23 @@
         <mxCell id="pLAkf531DFTIB7mjHat2-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="JUHuugl6f-nXhk04OkP1-2" target="JUHuugl6f-nXhk04OkP1-11">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="pLAkf531DFTIB7mjHat2-8" value="Tracking::CheckReferenceKeyFrame()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1420" y="1510" width="380" height="96" as="geometry" />
+        <mxCell id="pLAkf531DFTIB7mjHat2-8" value="Tracking::TrackReferenceKeyFrame()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="1420" y="1510" width="380" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="pLAkf531DFTIB7mjHat2-9" value="对mLastFrame帧中的每个地图点mvpMapPoints均进行检查，查看是否发生变化，调用GetReplaced函数，若返回的点数据中含有值，则表明发生变化，将mvpMapPoints更换为该返回值" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLAkf531DFTIB7mjHat2-8">
-          <mxGeometry y="26" width="380" height="70" as="geometry" />
+        <mxCell id="pLAkf531DFTIB7mjHat2-9" value="计算当前帧的BoW向量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLAkf531DFTIB7mjHat2-8">
+          <mxGeometry y="26" width="380" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="pLAkf531DFTIB7mjHat2-10" value="与参考关键帧进行ORB特征点匹配，返回匹配对数，如果匹配对数&amp;lt;15对直接返回False" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLAkf531DFTIB7mjHat2-8">
+          <mxGeometry y="50" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pLAkf531DFTIB7mjHat2-11" value="若匹配数满足要求，则将当前帧的mvpMapPoints更改为参考关键帧中匹配上的地图点，初始化当前帧的Tcw为上一帧的Tcw" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLAkf531DFTIB7mjHat2-8">
+          <mxGeometry y="90" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pLAkf531DFTIB7mjHat2-12" value="调用Optimizer::Optimization函数仅优化位姿，注意这里使用了深度信息进行优化，优化之后会更新mCurrentFrame的mvbOutlier信息以及调用setPose()函数更新位姿Tcw相关信息" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLAkf531DFTIB7mjHat2-8">
+          <mxGeometry y="130" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-0" value="丢弃Outliers，遍历所有特征点，如果有对应的地图点则执行以下操作：&lt;br&gt;1) 若该地图点的mvbOutlier为T，以NULL清空对应的mvpMapPoints，mvbOutlier置为F，该地图点的mnLastFrameSeen属性置为当前帧的Id&lt;br&gt;2) 若mvbOutlier为F，检查该点的nObs数是否大于0，若大于0则nmatchesMap+1&lt;br&gt;3) 若nmatchesMap&amp;gt;=10返回T，否则F" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLAkf531DFTIB7mjHat2-8">
+          <mxGeometry y="190" width="380" height="110" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -1092,7 +1104,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="aP_kbaAN00xeuYt3gxM6" name="Frame">
-    <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="769" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="_ahl4LY8EQThOW4oc6h7-0" />
         <mxCell id="_ahl4LY8EQThOW4oc6h7-1" parent="_ahl4LY8EQThOW4oc6h7-0" />
