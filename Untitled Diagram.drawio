@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T04:46:24.241Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="CkkttA-wuKBiqWt_g70Q" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T04:51:18.764Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="JmxoF6r6r_HaDthRgpsl" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -342,58 +342,61 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_WeXFQgnrd8vcBTq9_94-13" value="Tracking::Track()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="XBM9AIjGbo9Ioxt-2AgH-1" vertex="1">
-          <mxGeometry x="1000" y="650" width="380" height="288" as="geometry" />
+          <mxGeometry x="1000" y="650" width="380" height="304" as="geometry" />
         </mxCell>
         <mxCell id="_WeXFQgnrd8vcBTq9_94-14" value="第一帧时更新当前状态mState为NOT_INITIALIZED, mLastProcessedState=mState，锁住mMutexMapUpdate" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
           <mxGeometry y="26" width="380" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="_WeXFQgnrd8vcBTq9_94-15" value="当前状态为NOT_INITIALIZED时，调用StereoInitialization()函数，随后查看当前状态mState是否为OK，若否，直接返回" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
-          <mxGeometry y="70" width="380" height="40" as="geometry" />
+        <mxCell id="_WeXFQgnrd8vcBTq9_94-15" value="检查当前状态，当前状态为NOT_INITIALIZED时，调用StereoInitialization()函数，随后查看当前状态mState是否为OK，若否，直接返回" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
+          <mxGeometry y="70" width="380" height="60" as="geometry" />
         </mxCell>
         <mxCell id="_WeXFQgnrd8vcBTq9_94-16" value="当前状态不为NOT_INITIALIZED时，意味着初始化完成" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
-          <mxGeometry y="110" width="380" height="34" as="geometry" />
+          <mxGeometry y="130" width="380" height="34" as="geometry" />
         </mxCell>
         <mxCell id="_WeXFQgnrd8vcBTq9_94-17" value="mvKeys去畸变后存放至mvKeysUn" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
-          <mxGeometry y="144" width="380" height="26" as="geometry" />
+          <mxGeometry y="164" width="380" height="26" as="geometry" />
         </mxCell>
         <mxCell id="_WeXFQgnrd8vcBTq9_94-18" value="根据深度图计算得到双目右视图的特征点水平坐标以及深度值，存放在mvuRight以及mvDepth中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
-          <mxGeometry y="170" width="380" height="44" as="geometry" />
+          <mxGeometry y="190" width="380" height="44" as="geometry" />
         </mxCell>
         <mxCell id="_WeXFQgnrd8vcBTq9_94-19" value="根据特征点数量初始化当前帧对应的地图点mvpMapPoints(NULL)以及mvbOutlier(F)" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
-          <mxGeometry y="214" width="380" height="44" as="geometry" />
+          <mxGeometry y="234" width="380" height="44" as="geometry" />
         </mxCell>
         <mxCell id="_WeXFQgnrd8vcBTq9_94-20" value="InitializeClass()以及AssignFeaturesToGrid()" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
-          <mxGeometry y="258" width="380" height="26" as="geometry" />
+          <mxGeometry y="278" width="380" height="26" as="geometry" />
         </mxCell>
         <mxCell id="_WeXFQgnrd8vcBTq9_94-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="_WeXFQgnrd8vcBTq9_94-12" target="_WeXFQgnrd8vcBTq9_94-14" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Fhw8bfbuc33Xyqhf_6aT-1" value="Tracking::StereoInitialization()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1440" y="736" width="380" height="350" as="geometry" />
+          <mxGeometry x="1440" y="736" width="380" height="374" as="geometry" />
         </mxCell>
         <mxCell id="Fhw8bfbuc33Xyqhf_6aT-2" value="仅在特征点数量N&amp;gt;500时执行，否则直接返回" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fhw8bfbuc33Xyqhf_6aT-1">
           <mxGeometry y="26" width="380" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="Fhw8bfbuc33Xyqhf_6aT-4" value="以当前帧创建新的关键帧KeyFrame，将这一KF放入mpMap中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fhw8bfbuc33Xyqhf_6aT-1">
+        <mxCell id="jccngPNeb42A097UBn1b-10" value="对当前帧mCurrentFrame设置单位阵位姿，调用SetPose函数" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fhw8bfbuc33Xyqhf_6aT-1">
           <mxGeometry y="50" width="380" height="24" as="geometry" />
         </mxCell>
+        <mxCell id="Fhw8bfbuc33Xyqhf_6aT-4" value="以当前帧创建新的关键帧KeyFrame，将这一KF放入mpMap中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fhw8bfbuc33Xyqhf_6aT-1">
+          <mxGeometry y="74" width="380" height="24" as="geometry" />
+        </mxCell>
         <mxCell id="76IdRFfovIAXzH4ugCji-0" value="对每个特征点做如下操作：a. 获得当前特征点的世界坐标；b. 根据世界坐标建立新的mapPoint; c. 为该MapPoint加入当前帧对应特征点的观测及序号; d. 为关键帧加入该地图点及序号; e. 更新该MapPoint的法线，描述子以及最大最小距离; f. 更新mpMap中的地图点; g. 为当前帧中的mvpMapPoints增加该地图点" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fhw8bfbuc33Xyqhf_6aT-1">
-          <mxGeometry y="74" width="380" height="86" as="geometry" />
+          <mxGeometry y="98" width="380" height="86" as="geometry" />
         </mxCell>
         <mxCell id="touVyotahS0yNIuInN83-28" value="局部地图器mpLocalMapper中加入该关键帧" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fhw8bfbuc33Xyqhf_6aT-1">
-          <mxGeometry y="160" width="380" height="24" as="geometry" />
+          <mxGeometry y="184" width="380" height="24" as="geometry" />
         </mxCell>
         <mxCell id="touVyotahS0yNIuInN83-29" value="利用mCurrentFrame初始化mLastFrame，更新mnLastKeyFrameId为当前帧Id，更新mpLastKeyFrame为当前关键帧" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fhw8bfbuc33Xyqhf_6aT-1">
-          <mxGeometry y="184" width="380" height="36" as="geometry" />
+          <mxGeometry y="208" width="380" height="36" as="geometry" />
         </mxCell>
         <mxCell id="touVyotahS0yNIuInN83-30" value="mvpLocalKeyFrames加入当前关键帧，通过取得mpMap中所有的地图点更新mvpLocalMapPoints，mpReferenceKF以及mCurrentFrame中的mpReferenceKF更新为当前关键帧，" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fhw8bfbuc33Xyqhf_6aT-1">
-          <mxGeometry y="220" width="380" height="50" as="geometry" />
+          <mxGeometry y="244" width="380" height="50" as="geometry" />
         </mxCell>
         <mxCell id="jccngPNeb42A097UBn1b-4" value="mpMap设置参考地图点为当前帧对应的地图点，并更新mpMap的mvpKeyFrameOrigins，将当前关键帧加入" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fhw8bfbuc33Xyqhf_6aT-1">
-          <mxGeometry y="270" width="380" height="40" as="geometry" />
+          <mxGeometry y="294" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="jccngPNeb42A097UBn1b-7" value="更新当前状态mState为OK状态" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Fhw8bfbuc33Xyqhf_6aT-1">
-          <mxGeometry y="310" width="380" height="40" as="geometry" />
+          <mxGeometry y="334" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Fhw8bfbuc33Xyqhf_6aT-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="_WeXFQgnrd8vcBTq9_94-15" target="Fhw8bfbuc33Xyqhf_6aT-2">
           <mxGeometry relative="1" as="geometry" />
@@ -514,6 +517,24 @@
         </mxCell>
         <mxCell id="jccngPNeb42A097UBn1b-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="jccngPNeb42A097UBn1b-4" target="jccngPNeb42A097UBn1b-6">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jccngPNeb42A097UBn1b-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontColor=#FF0000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="jccngPNeb42A097UBn1b-10" target="jccngPNeb42A097UBn1b-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1890" y="710" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1880" y="798" />
+              <mxPoint x="1880" y="668" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jccngPNeb42A097UBn1b-12" value="Frame::SetPose()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="2002" y="630" width="380" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="jccngPNeb42A097UBn1b-13" value="更新mTcw" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="jccngPNeb42A097UBn1b-12">
+          <mxGeometry y="26" width="380" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="jccngPNeb42A097UBn1b-14" value="根据mTcw更新mRcw, mRwc, mtcw, mOw" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="jccngPNeb42A097UBn1b-12">
+          <mxGeometry y="50" width="380" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
