@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T08:38:15.546Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="RRjpnurLghEWWblgrS0k" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T08:46:52.038Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="GIjqvLrCpdv4xFzq-lMG" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -595,7 +595,7 @@
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-2" value="Tracking::TrackWithMotionModel()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
           <mxGeometry x="1420" y="1840" width="380" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="PlLTtLYmkT2AqZDPCaeT-4" value="调用TrackWithMotionModel函数扩充上一帧中的地图点mvpMapPoints数量，" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-2">
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-4" value="调用UpdateLastFrame函数扩充上一帧中的地图点mvpMapPoints数量，" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-2">
           <mxGeometry y="26" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-5" value="若匹配数满足要求，则将当前帧的mvpMapPoints更改为参考关键帧中匹配上的地图点，初始化当前帧的Tcw为上一帧的Tcw" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-2">
@@ -608,10 +608,13 @@
           <mxGeometry y="166" width="380" height="110" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-8" value="Tracking::UpdateLastFrame()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1860" y="1990" width="380" height="60" as="geometry" />
+          <mxGeometry x="1860" y="1990" width="380" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="PlLTtLYmkT2AqZDPCaeT-9" value="由于" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-8">
-          <mxGeometry y="26" width="380" height="34" as="geometry" />
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-9" value="由于LocalMapping线程可能更新了位姿，需要对位姿进行更新，利用上一帧的mpReferenceKF与mlRelativeFramePoses中的back()位姿更新上一帧的位姿" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-8">
+          <mxGeometry y="26" width="380" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-10" value="若上一帧的mpReferenceKF就是自己则直接返回，此时对所有特征点的mvDepth排序，若最近的100个点均小于阈值mThDepth且有对应的地图点且地图点观测&amp;gt;=1，则返回，否则进行扩充，利用更新后的位姿调用Frame::UnprojectStereo()函数获得3D点坐标写入mvpMapPoints中，并写入mlpTemporalPoints中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-8">
+          <mxGeometry y="80" width="380" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
