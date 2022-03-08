@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T05:04:49.714Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="dVGVYAGjx_qDqPychI_-" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T05:04:56.091Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="WcsKvdiK25svbVnblhed" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -352,6 +352,9 @@
         </mxCell>
         <mxCell id="_WeXFQgnrd8vcBTq9_94-15" value="检查当前状态，当前状态为NOT_INITIALIZED时，调用StereoInitialization()函数，随后查看当前状态mState是否为OK，若否，直接返回，否则跳转" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
           <mxGeometry y="70" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qA90g9YNz_ztb8RQSS6E-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="_WeXFQgnrd8vcBTq9_94-13" source="_WeXFQgnrd8vcBTq9_94-16" target="_WeXFQgnrd8vcBTq9_94-17">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_WeXFQgnrd8vcBTq9_94-16" value="当前状态不为NOT_INITIALIZED时，意味着初始化完成" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
           <mxGeometry y="130" width="380" height="34" as="geometry" />
