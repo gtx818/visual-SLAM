@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T04:51:18.764Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="JmxoF6r6r_HaDthRgpsl" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T05:04:05.366Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="yTAVznDVVmH78gKbaWOC" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -342,7 +342,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_WeXFQgnrd8vcBTq9_94-13" value="Tracking::Track()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="XBM9AIjGbo9Ioxt-2AgH-1" vertex="1">
-          <mxGeometry x="1000" y="650" width="380" height="304" as="geometry" />
+          <mxGeometry x="1000" y="650" width="380" height="344" as="geometry" />
         </mxCell>
         <mxCell id="_WeXFQgnrd8vcBTq9_94-14" value="第一帧时更新当前状态mState为NOT_INITIALIZED, mLastProcessedState=mState，锁住mMutexMapUpdate" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
           <mxGeometry y="26" width="380" height="44" as="geometry" />
@@ -353,17 +353,11 @@
         <mxCell id="_WeXFQgnrd8vcBTq9_94-16" value="当前状态不为NOT_INITIALIZED时，意味着初始化完成" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
           <mxGeometry y="130" width="380" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="_WeXFQgnrd8vcBTq9_94-17" value="mvKeys去畸变后存放至mvKeysUn" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
-          <mxGeometry y="164" width="380" height="26" as="geometry" />
+        <mxCell id="_WeXFQgnrd8vcBTq9_94-17" value="若mCurrentFrame的mTcw不为空，则记录其与参考关键帧的相对位姿至mlRelativeFramePoses，记录参考关键帧mpReferenceKF至mlpReferences,记录当前帧的时间戳至mlFrameTimes中，记录当前状态是否为LOST至mlbLost中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
+          <mxGeometry y="164" width="380" height="66" as="geometry" />
         </mxCell>
-        <mxCell id="_WeXFQgnrd8vcBTq9_94-18" value="根据深度图计算得到双目右视图的特征点水平坐标以及深度值，存放在mvuRight以及mvDepth中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
-          <mxGeometry y="190" width="380" height="44" as="geometry" />
-        </mxCell>
-        <mxCell id="_WeXFQgnrd8vcBTq9_94-19" value="根据特征点数量初始化当前帧对应的地图点mvpMapPoints(NULL)以及mvbOutlier(F)" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
-          <mxGeometry y="234" width="380" height="44" as="geometry" />
-        </mxCell>
-        <mxCell id="_WeXFQgnrd8vcBTq9_94-20" value="InitializeClass()以及AssignFeaturesToGrid()" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
-          <mxGeometry y="278" width="380" height="26" as="geometry" />
+        <mxCell id="_WeXFQgnrd8vcBTq9_94-18" value="若mCurrentFrame的mTcw为空（可能跟丢了），此时记录mlRelativeFramePoses，mlpReferences以及mlFrameTimes中&lt;br&gt;的.back()元素，记录当前状态是否为LOST至mlbLost中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="_WeXFQgnrd8vcBTq9_94-13" vertex="1">
+          <mxGeometry y="230" width="380" height="60" as="geometry" />
         </mxCell>
         <mxCell id="_WeXFQgnrd8vcBTq9_94-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="_WeXFQgnrd8vcBTq9_94-12" target="_WeXFQgnrd8vcBTq9_94-14" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -743,7 +737,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="Oe_KxzGOlBV3KpHkY8Ww" name="Tracking">
-    <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="769" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="eyBE8eY4iIQxkAD-bZA1-0" />
         <mxCell id="eyBE8eY4iIQxkAD-bZA1-1" parent="eyBE8eY4iIQxkAD-bZA1-0" />
@@ -797,7 +791,7 @@
         <mxCell id="4fdpuZO_QBha4YaecK2Q-15" value="&lt;font&gt;mpInitializer初始化器，仅用于单目&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" parent="4fdpuZO_QBha4YaecK2Q-0" vertex="1">
           <mxGeometry y="390" width="560" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="4fdpuZO_QBha4YaecK2Q-16" value="&lt;font&gt;mpReferenceKF, mvpLocalKeyFrames, mvpLocalMapPoints局部地图相关变量&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" parent="4fdpuZO_QBha4YaecK2Q-0" vertex="1">
+        <mxCell id="4fdpuZO_QBha4YaecK2Q-16" value="&lt;font&gt;mpReferenceKF当前的参考关键帧, mvpLocalKeyFrames, mvpLocalMapPoints局部地图相关变量&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" parent="4fdpuZO_QBha4YaecK2Q-0" vertex="1">
           <mxGeometry y="416" width="560" height="26" as="geometry" />
         </mxCell>
         <mxCell id="4fdpuZO_QBha4YaecK2Q-17" value="&lt;font&gt;mpSystem&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0324FF;" parent="4fdpuZO_QBha4YaecK2Q-0" vertex="1">
