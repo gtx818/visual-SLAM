@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T08:17:49.782Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="1w23kTec_H_a5oh0oRRU" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-08T08:38:15.546Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="RRjpnurLghEWWblgrS0k" version="16.6.6" type="github" pages="13">
   <diagram name="Page-1" id="5d7acffa-a066-3a61-03fe-96351882024d">
     <mxGraphModel dx="782" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
@@ -537,13 +537,13 @@
           <mxGeometry y="50" width="380" height="40" as="geometry" />
         </mxCell>
         <mxCell id="JUHuugl6f-nXhk04OkP1-0" value="Tracking::_Track_full()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1420" y="1160" width="380" height="170" as="geometry" />
+          <mxGeometry x="1420" y="1160" width="380" height="180" as="geometry" />
         </mxCell>
         <mxCell id="JUHuugl6f-nXhk04OkP1-1" value="检查当前状态mState是否为OK，若不是，则调用重定位函数Relocalization()" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="JUHuugl6f-nXhk04OkP1-0">
           <mxGeometry y="26" width="380" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="JUHuugl6f-nXhk04OkP1-2" value="若为OK，则首先调用CheckReplacedInLastFrame()函数，因为Local Mapping线程可能在上一帧中修改了一些地图点数据。随后若当前帧距上一次重定位不久或者运动模型mVelocity为空则跟踪参考关键帧TrackReferenceKeyFrame()，否则首先调用TrackWithMotionModel()，根据使用运动模型结果判断是否再掉哟昂TrackReferenceKeyFrame()，最终上述所有函数都会返回一个状态" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="JUHuugl6f-nXhk04OkP1-0">
-          <mxGeometry y="70" width="380" height="100" as="geometry" />
+        <mxCell id="JUHuugl6f-nXhk04OkP1-2" value="若为OK，则首先调用CheckReplacedInLastFrame()函数，因为Local Mapping线程可能在上一帧中修改了一些地图点数据。随后若当前帧距上一次重定位不久或者运动模型mVelocity为空则根据参考关键帧地图点的匹配点对执行PnP操作优化位姿，TrackReferenceKeyFrame()，否则首先调用TrackWithMotionModel()，根据使用运动模型结果判断是否再掉哟昂TrackReferenceKeyFrame()，最终上述所有函数都会返回一个状态" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="JUHuugl6f-nXhk04OkP1-0">
+          <mxGeometry y="70" width="380" height="110" as="geometry" />
         </mxCell>
         <mxCell id="JUHuugl6f-nXhk04OkP1-10" value="Tracking::CheckReplacedInLastFrame()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
           <mxGeometry x="1420" y="1378" width="380" height="96" as="geometry" />
@@ -572,7 +572,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="pLAkf531DFTIB7mjHat2-8" value="Tracking::TrackReferenceKeyFrame()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
-          <mxGeometry x="1420" y="1510" width="380" height="300" as="geometry" />
+          <mxGeometry x="1420" y="1510" width="380" height="310" as="geometry" />
         </mxCell>
         <mxCell id="pLAkf531DFTIB7mjHat2-9" value="计算当前帧的BoW向量" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLAkf531DFTIB7mjHat2-8">
           <mxGeometry y="26" width="380" height="24" as="geometry" />
@@ -583,14 +583,35 @@
         <mxCell id="pLAkf531DFTIB7mjHat2-11" value="若匹配数满足要求，则将当前帧的mvpMapPoints更改为参考关键帧中匹配上的地图点，初始化当前帧的Tcw为上一帧的Tcw" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLAkf531DFTIB7mjHat2-8">
           <mxGeometry y="90" width="380" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="pLAkf531DFTIB7mjHat2-12" value="调用Optimizer::Optimization函数仅优化位姿，注意这里使用了深度信息进行优化，优化之后会更新mCurrentFrame的mvbOutlier信息以及调用setPose()函数更新位姿Tcw相关信息" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLAkf531DFTIB7mjHat2-8">
-          <mxGeometry y="130" width="380" height="60" as="geometry" />
+        <mxCell id="pLAkf531DFTIB7mjHat2-12" value="调用Optimizer::Optimization函数仅优化位姿，注意这里使用了深度信息进行优化并且使用P3P，当前帧对应的3D地图点以及2D观测点，优化之后会更新mCurrentFrame的mvbOutlier信息以及调用setPose()函数更新位姿Tcw相关信息" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLAkf531DFTIB7mjHat2-8">
+          <mxGeometry y="130" width="380" height="70" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-0" value="丢弃Outliers，遍历所有特征点，如果有对应的地图点则执行以下操作：&lt;br&gt;1) 若该地图点的mvbOutlier为T，以NULL清空对应的mvpMapPoints，mvbOutlier置为F，该地图点的mnLastFrameSeen属性置为当前帧的Id&lt;br&gt;2) 若mvbOutlier为F，检查该点的nObs数是否大于0，若大于0则nmatchesMap+1&lt;br&gt;3) 若nmatchesMap&amp;gt;=10返回T，否则F" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLAkf531DFTIB7mjHat2-8">
-          <mxGeometry y="190" width="380" height="110" as="geometry" />
+          <mxGeometry y="200" width="380" height="110" as="geometry" />
         </mxCell>
         <mxCell id="PlLTtLYmkT2AqZDPCaeT-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;" edge="1" parent="XBM9AIjGbo9Ioxt-2AgH-1" source="JUHuugl6f-nXhk04OkP1-2" target="pLAkf531DFTIB7mjHat2-9">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-2" value="Tracking::TrackWithMotionModel()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="1420" y="1840" width="380" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-4" value="调用TrackWithMotionModel函数扩充上一帧中的地图点mvpMapPoints数量，" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-2">
+          <mxGeometry y="26" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-5" value="若匹配数满足要求，则将当前帧的mvpMapPoints更改为参考关键帧中匹配上的地图点，初始化当前帧的Tcw为上一帧的Tcw" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-2">
+          <mxGeometry y="66" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-6" value="调用Optimizer::Optimization函数仅优化位姿，注意这里使用了深度信息进行优化，优化之后会更新mCurrentFrame的mvbOutlier信息以及调用setPose()函数更新位姿Tcw相关信息" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-2">
+          <mxGeometry y="106" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-7" value="丢弃Outliers，遍历所有特征点，如果有对应的地图点则执行以下操作：&lt;br&gt;1) 若该地图点的mvbOutlier为T，以NULL清空对应的mvpMapPoints，mvbOutlier置为F，该地图点的mnLastFrameSeen属性置为当前帧的Id&lt;br&gt;2) 若mvbOutlier为F，检查该点的nObs数是否大于0，若大于0则nmatchesMap+1&lt;br&gt;3) 若nmatchesMap&amp;gt;=10返回T，否则F" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-2">
+          <mxGeometry y="166" width="380" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-8" value="Tracking::UpdateLastFrame()" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" vertex="1" parent="XBM9AIjGbo9Ioxt-2AgH-1">
+          <mxGeometry x="1860" y="1990" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PlLTtLYmkT2AqZDPCaeT-9" value="由于" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="PlLTtLYmkT2AqZDPCaeT-8">
+          <mxGeometry y="26" width="380" height="34" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
