@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-03-08T15:47:09.155Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="Amn206qhyUKFM2hTS8Ml" version="16.6.6" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2022-03-09T03:59:24.979Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="s9jICGn-HBG5leyzo56s" version="16.6.6" type="github" pages="13">
   <diagram id="NEFC5_riWzsDIuWnUayE" name="Main">
     <mxGraphModel dx="905" dy="1767" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1365,19 +1365,19 @@
           <mxGeometry y="110" width="330" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-60" value="ProcessMovingObject()移动一致性检验" style="swimlane;html=1;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#e0e0e0;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;align=center;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="_ahl4LY8EQThOW4oc6h7-1" vertex="1">
-          <mxGeometry x="800" y="10" width="330" height="200" as="geometry" />
+          <mxGeometry x="800" y="10" width="330" height="210" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-61" value="清空F_prepoint, F_nextpoint, F2_prepoint, F2_nextpoint, T_M" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=default;" parent="ASyV_rmVMgUqRF97C-41-60" vertex="1">
           <mxGeometry y="26" width="330" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="ASyV_rmVMgUqRF97C-41-62" value="计算前一帧与当前帧的匹配点" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=default;" parent="ASyV_rmVMgUqRF97C-41-60" vertex="1">
-          <mxGeometry y="70" width="330" height="30" as="geometry" />
+        <mxCell id="ASyV_rmVMgUqRF97C-41-62" value="计算前一帧与当前帧的匹配点(注意这里并不是使用的特征点，而是光流法用的角点)" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=default;" parent="ASyV_rmVMgUqRF97C-41-60" vertex="1">
+          <mxGeometry y="70" width="330" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-63" value="滤除不可靠的匹配点对" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=default;" parent="ASyV_rmVMgUqRF97C-41-60" vertex="1">
-          <mxGeometry y="100" width="330" height="26" as="geometry" />
+          <mxGeometry y="110" width="330" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-64" value="根据匹配点对计算基础矩阵，从而计算出判据距离，若距离&amp;lt;=0.1则匹配点对存储值F_prepoint, F2_prepoint以及F_nextpoint, F2_nextpoint中，若距离&amp;gt;limit_dis_ep1则存储至T_M中" style="text;html=1;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=default;" parent="ASyV_rmVMgUqRF97C-41-60" vertex="1">
-          <mxGeometry y="126" width="330" height="74" as="geometry" />
+          <mxGeometry y="136" width="330" height="74" as="geometry" />
         </mxCell>
         <mxCell id="ASyV_rmVMgUqRF97C-41-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" parent="_ahl4LY8EQThOW4oc6h7-1" source="ASyV_rmVMgUqRF97C-41-23" target="ASyV_rmVMgUqRF97C-41-63" edge="1">
           <mxGeometry relative="1" as="geometry" />
